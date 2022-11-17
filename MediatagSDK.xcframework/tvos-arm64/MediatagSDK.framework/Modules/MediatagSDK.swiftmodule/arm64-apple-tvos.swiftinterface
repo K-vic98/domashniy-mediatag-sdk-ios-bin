@@ -1,0 +1,220 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-tvos12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MediatagSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AdSupport
+import AppTrackingTransparency
+import Foundation
+@_exported import MediatagSDK
+import Network
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public struct Event : Swift.Equatable, Swift.Hashable {
+  public init(contactType: MediatagSDK.ContactType!, view: MediatagSDK.EventType? = nil, idc: Swift.Int? = nil, idlc: Swift.String? = nil, fts: Swift.Int64? = nil, urlc: Swift.String? = nil, media: Swift.String? = nil, ver: Swift.Int? = nil)
+  public init(contactType: MediatagSDK.ContactType!)
+  public var tsu: Swift.Int {
+    get
+  }
+  public var type: MediatagSDK.ContactType! {
+    get
+  }
+  public var view: MediatagSDK.EventType?
+  public var ver: Swift.Int?
+  public var idc: Swift.Int?
+  public var fts: Swift.Int64?
+  public var idlc: Swift.String?
+  public var urlc: Swift.String?
+  public var media: Swift.String?
+  public static func == (a: MediatagSDK.Event, b: MediatagSDK.Event) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public class NSEvent : ObjectiveC.NSObject {
+  public init(contactType: Swift.Int, view: Swift.Int?, idc: Swift.Int?, idlc: Swift.String?, fts: Swift.Int64?, urlc: Swift.String?, media: Swift.String?, ver: Swift.Int?)
+  public init(contactType: Swift.Int)
+  @objc deinit
+}
+public struct RingBuffer<T> {
+  public typealias BufferTarget = (item: T?, at: Swift.Int)
+  public var state: [T] {
+    get
+  }
+  public init(count: Swift.Int)
+  public mutating func write(_ element: T)
+  public mutating func clear(atIndex: Swift.Int)
+  public mutating func read() -> MediatagSDK.RingBuffer<T>.BufferTarget?
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  public var isFull: Swift.Bool {
+    get
+  }
+}
+@objc public class NSConfiguration : ObjectiveC.NSObject, MediatagSDK.ConfigurationType {
+  public var cid: Swift.String
+  public var tms: Swift.String
+  public var hid: Swift.String?
+  public var uid: Swift.String?
+  public var uidc: Swift.Int?
+  @objc public init(cid: Swift.String, tms: Swift.String, uid: Swift.String?, hid: Swift.String?, uidc: Foundation.NSNumber?)
+  @objc deinit
+}
+public protocol DataManager : AnyObject {
+  func getItems(for key: Swift.String) -> [Swift.String]
+  func setItems(items: [Swift.String], into key: Swift.String)
+}
+@_hasMissingDesignatedInitializers public class UserDefaultsDataManager : MediatagSDK.DataManager {
+  public func getItems(for key: Swift.String) -> [Swift.String]
+  public func setItems(items: [Swift.String], into key: Swift.String)
+  @objc deinit
+}
+public typealias Action = (_ success: Swift.Bool, _ query: Swift.String) -> Swift.Void
+public protocol PluginType {
+  func prepare(_ request: Foundation.URLRequest) -> Foundation.URLRequest
+}
+public protocol RequestConfiguration : AnyObject {
+  var baseUrl: Foundation.URL { get }
+  var plugins: [MediatagSDK.PluginType]? { get }
+  var encodingSet: [Swift.String : Foundation.CharacterSet] { get }
+  var urlReplacingOccurrences: [Swift.String : Swift.String] { get }
+  var heartbeatInterval: Swift.Double { get }
+  var sendingQueueBufferSize: Swift.Int { get }
+  var dataManager: MediatagSDK.DataManager? { get }
+  func toQuery() -> [[Swift.String : Any?]]
+  func mapQuery(query: [[Swift.String : Any?]]) -> [Foundation.URLQueryItem]
+}
+public protocol ConfigurationType : MediatagSDK.RequestConfiguration {
+  var uidc: Swift.Int? { get }
+  var cid: Swift.String { get }
+  var tms: Swift.String { get }
+  var hid: Swift.String? { get }
+  var uid: Swift.String? { get }
+}
+@objc public class NSMediatagSDK : ObjectiveC.NSObject {
+  @objc public static var shared: MediatagSDK.NSMediatagSDK
+  @objc public init(configuration: MediatagSDK.NSConfiguration)
+  @objc convenience public init(cid: Swift.String, tms: Swift.String!, uid: Swift.String?, hid: Swift.String?, uidc: Foundation.NSNumber?)
+  @objc public func setConfiguration(cid: Swift.String, tms: Swift.String!, uid: Swift.String?, hid: Swift.String?, uidc: Foundation.NSNumber?)
+  @objc public func setConfiguration(configuration: MediatagSDK.NSConfiguration)
+  @objc public func next(contactType: Foundation.NSNumber, view: Foundation.NSNumber?, idc: Foundation.NSNumber?, idlc: Foundation.NSString, fts: Swift.Int64, urlc: Foundation.NSString, media: Swift.String, ver: Foundation.NSNumber?)
+  @objc public func next(events: [MediatagSDK.NSEvent])
+  @objc public func getSendingAbility() -> Swift.Bool
+  @objc public func getSendingQueue() -> [Swift.String]
+  @objc public func setSendingQueue(items: [Swift.String])
+  @objc public func getUserAttributes() -> Foundation.NSMutableDictionary
+  @objc deinit
+}
+extension MediatagSDK.ConfigurationType {
+  public var sendingQueueBufferSize: Swift.Int {
+    get
+  }
+  public var heartbeatInterval: Swift.Double {
+    get
+  }
+  public var plugins: [MediatagSDK.PluginType]? {
+    get
+  }
+  public var baseUrl: Foundation.URL {
+    get
+  }
+  public var encodingSet: [Swift.String : Foundation.CharacterSet] {
+    get
+  }
+  public var urlReplacingOccurrences: [Swift.String : Swift.String] {
+    get
+  }
+  public func toQuery() -> [[Swift.String : Any?]]
+  public var dataManager: MediatagSDK.DataManager? {
+    get
+  }
+  public func mapQuery(query: [[Swift.String : Any?]]) -> [Foundation.URLQueryItem]
+  public func prepareQueryItemValue(encodingSet: inout [Swift.String : Foundation.CharacterSet], key: Swift.String, value: Any) -> Swift.String?
+}
+public enum ContactType : Swift.Int {
+  case undefined
+  case liveStream
+  case vod
+  case catchUp
+  case article
+  case socialMediaPost
+  case liveAudio
+  case audioByRequest
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum EventType : Swift.Int {
+  case stop, start, heartBeat, pause
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum QueryKeys : Swift.String {
+  case cid
+  case uid
+  case hid
+  case idc
+  case tms
+  case type
+  case uidc
+  case idlc
+  case view
+  case fts
+  case urlc
+  case media
+  case ver
+  case tsu
+  case dvi
+  case dvm
+  case dvn
+  case appn
+  case appv
+  case typ
+  case os
+  case sid
+  case tsc
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+final public class Mediatag {
+  final public var sendingIsAvailable: Swift.Bool {
+    get
+  }
+  public static let shared: MediatagSDK.Mediatag
+  public init(configuration: MediatagSDK.ConfigurationType, plugins: [MediatagSDK.PluginType] = [])
+  convenience public init(cid: Swift.String, tms: Swift.String!, uid: Swift.String?, hid: Swift.String?, uidc: Foundation.NSNumber?)
+  final public func setConfiguration(cid: Swift.String, tms: Swift.String!, uid: Swift.String?, hid: Swift.String?, uidc: Foundation.NSNumber?)
+  final public func setConfiguration(configuration: MediatagSDK.ConfigurationType)
+  final public func next(_ event: MediatagSDK.Event)
+  final public func next(_ events: [MediatagSDK.Event])
+  @objc deinit
+}
+extension MediatagSDK.Mediatag {
+  final public var sendingQueue: [Swift.String] {
+    get
+    set
+  }
+  final public var userAttributes: [[Swift.String : Any]] {
+    get
+  }
+}
+extension MediatagSDK.ContactType : Swift.Equatable {}
+extension MediatagSDK.ContactType : Swift.Hashable {}
+extension MediatagSDK.ContactType : Swift.RawRepresentable {}
+extension MediatagSDK.EventType : Swift.Equatable {}
+extension MediatagSDK.EventType : Swift.Hashable {}
+extension MediatagSDK.EventType : Swift.RawRepresentable {}
+extension MediatagSDK.QueryKeys : Swift.Equatable {}
+extension MediatagSDK.QueryKeys : Swift.Hashable {}
+extension MediatagSDK.QueryKeys : Swift.RawRepresentable {}

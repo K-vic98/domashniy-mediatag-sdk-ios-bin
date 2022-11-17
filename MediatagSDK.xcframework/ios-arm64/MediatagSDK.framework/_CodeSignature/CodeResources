@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		wb8ERyA874OEtYzW3O9IpwVXWi8=
+		IE7I8n3RmfylNQYAATS1y7jE35g=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -59,6 +59,10 @@
 		<key>Readme.ns.md</key>
 		<data>
 		o29Az2fOulzIjDb/3NzYH2f0klY=
+		</data>
+		<key>build_output.sh</key>
+		<data>
+		BGOcq67W2p3625kUvxXOirFWW0o=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -95,7 +99,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hBANxChd5KN+4OMONMXugQCky4E7lv5G3V3nBT1JYyQ=
+			/fdxQZSB3haLh5tqmAW8Xjm542AOunzqp64ZAP+imUw=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -152,6 +156,13 @@
 			<key>hash2</key>
 			<data>
 			gN/gSa7yJovVmUbM9s04cZDAFj8RkD/PUErnRcnXZog=
+			</data>
+		</dict>
+		<key>build_output.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SmVXdJc+rSdXeDPLpcgRQKw2NDMHUIRSAf9MRvSf9Cw=
 			</data>
 		</dict>
 	</dict>

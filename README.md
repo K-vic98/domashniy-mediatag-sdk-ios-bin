@@ -1,1 +1,2 @@
-# mediatag-sdk-ios-bin
+# MediatagSDK
+

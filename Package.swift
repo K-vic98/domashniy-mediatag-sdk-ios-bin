@@ -4,12 +4,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "MediatagSDK",
+    name: "Mediatag",
+    platforms: [.macOS(.v12), .iOS(.v12), .tvOS(.v12)],
+    products: [
+      .library(
+        name: "Mediatag",
+        targets: ["MediatagSDK"]
+      )
+    ],
     dependencies: [],
     targets: [
-        .binaryTarget(
-            name: "MediatagSDK",
-            path: "MediatagSDK.xcframework",
-            checksum: "f6457cc0bc2051c1c54c09ff9d82a5e5bfa226f50279754f8bde9e011ba209b5"),
+      .binaryTarget(
+          name: "MediatagSDK",
+          url: "https://github.com/MEDIASCOPE-JSC/mediatag-sdk-ios-bin/archive/refs/tags/1.0.8.zip",
+          checksum: "d8df45502642dc8a838390ee76d4fe5c59de65e617c20a7e9b7eb2ce0b72b719"
+      )
     ]
 )

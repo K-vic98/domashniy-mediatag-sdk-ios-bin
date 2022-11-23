@@ -32,7 +32,6 @@
     func getUserAttributes() -> NSMutableDictionary
   ```
 ### Отправка событий
-> все свойства события [см. здесь](./../models/Event.swift)
 ```swift
   [mediatagSDK 
     nextWithContactType: @1

@@ -16,14 +16,6 @@
 		<data>
 		Oo2gL9ICYS0jR0CqGdHP99TXyjs=
 		</data>
-		<key>LICENSE</key>
-		<data>
-		/2OlRMkyf46yacrHskXE9xF7yak=
-		</data>
-		<key>MediaTagSDK.podspec</key>
-		<data>
-		LUrnQJVC/dv34wjuHDX7Zwm1lmA=
-		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
 		IE7I8n3RmfylNQYAATS1y7jE35g=
@@ -48,22 +40,6 @@
 		<data>
 		n/egLYP9L6fDZdtP07dB2TgpSyU=
 		</data>
-		<key>Readme.advanced.md</key>
-		<data>
-		4nNIBmctGuG/VMB64FfdhoD+HyY=
-		</data>
-		<key>Readme.md</key>
-		<data>
-		7TGfdYMSB6DCBOnZCWJcbMSY8Dk=
-		</data>
-		<key>Readme.ns.md</key>
-		<data>
-		o29Az2fOulzIjDb/3NzYH2f0klY=
-		</data>
-		<key>build_output.sh</key>
-		<data>
-		BGOcq67W2p3625kUvxXOirFWW0o=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -79,20 +55,6 @@
 			<key>hash2</key>
 			<data>
 			dBUFkk9Ntnht2GvSnGze5V7mvVaEg5Uol4QVbsxQ+uE=
-			</data>
-		</dict>
-		<key>LICENSE</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			bDDCSkhsCdoKaEIOCiW16K9/KXdyppQEaaCDLFRSdpA=
-			</data>
-		</dict>
-		<key>MediaTagSDK.podspec</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			eH1dKQdXj7sqlMCLU6MKpDfCePAX/18njNeN9FySdFY=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -135,34 +97,6 @@
 			<key>hash2</key>
 			<data>
 			WfRIZuHfkedKRnii0pmF856ay1X/DhDnhc0/LzEQIdg=
-			</data>
-		</dict>
-		<key>Readme.advanced.md</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6RFpIFryIVpGHvGmAVWEmOvAMLWzFAXFgMB544AtJ7U=
-			</data>
-		</dict>
-		<key>Readme.md</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			4Pcu+gjTFV+yT9y9elW7YWuNLIFVhPm2YpmNchUGhfc=
-			</data>
-		</dict>
-		<key>Readme.ns.md</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			gN/gSa7yJovVmUbM9s04cZDAFj8RkD/PUErnRcnXZog=
-			</data>
-		</dict>
-		<key>build_output.sh</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SmVXdJc+rSdXeDPLpcgRQKw2NDMHUIRSAf9MRvSf9Cw=
 			</data>
 		</dict>
 	</dict>

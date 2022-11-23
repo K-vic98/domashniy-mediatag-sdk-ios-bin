@@ -19,7 +19,7 @@
     }
   ```
 ### Настройка параметров конфигурации по умолчанию:
-Протокол ConfigurationTyp eнаследуется от [RequestConfiguration](./models/Configuration.swift)
+Протокол ConfigurationTyp eнаследуется от `RequestConfiguration`
 > Вы можете переопределить методы построения URL-адреса
 
 - `baseUrl` (базовая реализация):

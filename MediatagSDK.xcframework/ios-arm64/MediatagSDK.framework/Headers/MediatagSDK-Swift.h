@@ -253,11 +253,44 @@ using UInt = size_t;
 
 #if defined(__OBJC__)
 @class NSString;
+@class NSURL;
+@protocol SdkDataManager;
 @class NSNumber;
+@class NSMutableURLRequest;
 
 SWIFT_CLASS("_TtC11MediatagSDK15NSConfiguration")
 @interface NSConfiguration : NSObject
+/// Client information:
+/// Identifier linked to the user’s account in the Owner’s system
+@property (nonatomic, copy) NSString * _Nullable hid;
+/// Client information:
+/// Application/user install ID (technical)
+@property (nonatomic, copy) NSString * _Nullable uid;
+/// Client information:
+/// Assigned by Mediascope
+@property (nonatomic, readonly, copy) NSString * _Nonnull cid;
+/// Client information:
+/// The ID of the thematic section.  Assigned by Mediascope
+@property (nonatomic, readonly, copy) NSString * _Nonnull tms;
+/// Request <code>URL</code> configuration:
+/// Basic URL that will be extended by events
+@property (nonatomic, copy) NSURL * _Nonnull baseUrl;
+/// The Character Set for encoding the values specified fields in encodingSet
+/// @link = https://www.url-encode-decode.com/
+@property (nonatomic, copy) NSString * _Nonnull encodingCharacterSet;
+/// Request <code>URL</code> transformation:
+/// encode URLQueryItem[key] using value
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull encodingSet;
+/// Data Manager
+/// Provides / saves  data when SDK was allocated / deallocated
+@property (nonatomic, strong) id <SdkDataManager> _Nullable dataManager;
+@property (nonatomic) NSTimeInterval heartbeatInterval;
+/// Client information:
+/// User/device ID
+@property (nonatomic, strong) NSNumber * _Nullable uIdc;
 - (nonnull instancetype)initWithCid:(NSString * _Nonnull)cid tms:(NSString * _Nonnull)tms uid:(NSString * _Nullable)uid hid:(NSString * _Nullable)hid uidc:(NSNumber * _Nullable)uidc OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithCid:(NSString * _Nonnull)cid tms:(NSString * _Nonnull)tms OBJC_DESIGNATED_INITIALIZER;
+- (void)setPluginWithBase:(BOOL)withBase modify:(NSMutableURLRequest * _Nonnull (^ _Nullable)(NSMutableURLRequest * _Nonnull))modify;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -273,51 +306,44 @@ SWIFT_CLASS("_TtC11MediatagSDK7NSEvent")
 
 SWIFT_CLASS("_TtC11MediatagSDK13NSMediatagSDK")
 @interface NSMediatagSDK : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) NSMediatagSDK * _Nonnull shared;)
+/// @return shared NSMediatagSDK implementation
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NSMediatagSDK * _Nonnull shared;)
 + (NSMediatagSDK * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-+ (void)setShared:(NSMediatagSDK * _Nonnull)value;
-/// Creates a new SDK
-/// Use this initializer with configuration
-/// \param configuration an object containing user information
-///
-/// \param plugins Called to modify a request before sending.
-///
+/// @Creates a new SDK
+/// @Use this initializer with configuration
+/// @description with configuration: an object containing user information
 - (nonnull instancetype)initWithConfiguration:(NSConfiguration * _Nonnull)configuration OBJC_DESIGNATED_INITIALIZER;
-/// SDK convenience init
-/// \param params user configuration perameters
-///
+/// @SDK convenience init
+/// @description init with user configuration perameters
 - (nonnull instancetype)initWithCid:(NSString * _Nonnull)cid tms:(NSString * _Null_unspecified)tms uid:(NSString * _Nullable)uid hid:(NSString * _Nullable)hid uidc:(NSNumber * _Nullable)uidc;
-/// SDK configuration
-/// \param configuration user configuration perameters
-///
-- (void)setConfigurationWithCid:(NSString * _Nonnull)cid tms:(NSString * _Null_unspecified)tms uid:(NSString * _Nullable)uid hid:(NSString * _Nullable)hid uidc:(NSNumber * _Nullable)uidc;
-/// SDK configuration
-/// \param configuration an object containing user information
-///
+/// @SDK configuration
+/// @description set configuration with object
 - (void)setConfigurationWithConfiguration:(NSConfiguration * _Nonnull)configuration;
-- (void)nextWithContactType:(NSNumber * _Nonnull)contactType view:(NSNumber * _Nullable)view idc:(NSNumber * _Nullable)idc idlc:(NSString * _Nonnull)idlc fts:(int64_t)fts urlc:(NSString * _Nonnull)urlc media:(NSString * _Nonnull)media ver:(NSNumber * _Nullable)ver;
-/// Send next events to the server immediately
-/// \param event An Event type objects for sending on servert
-///
-- (void)nextWithEvents:(NSArray<NSEvent *> * _Nonnull)events;
-/// Data sending ability trigger
-/// <h1>Notes:</h1>
-/// <ol>
-///   <li>
-///     case <code>false</code>current  request will be add into  sendingQueue
-///   </li>
-///   <li>
-///     case <code>true</code> will try send current request and one by one request from queue while it won’t be empty
-///   </li>
-/// </ol>
-- (BOOL)getSendingAbility SWIFT_WARN_UNUSED_RESULT;
+/// SDK configuration
+/// @description: set configuration with perameters
+- (void)updateConfigurationWithUid:(NSString * _Nullable)uid hid:(NSString * _Nullable)hid uidc:(NSNumber * _Nullable)uidc;
+/// @Send new event
+/// @description: send an Event type object for sending on servert
+- (void)nextWithContactType:(NSNumber * _Nonnull)contactType view:(NSNumber * _Nullable)view idc:(NSNumber * _Nullable)idc idlc:(NSString * _Nullable)idlc urlc:(NSString * _Nullable)urlc media:(NSString * _Nullable)media ver:(NSNumber * _Nullable)ver fts:(NSString * _Nullable)fts;
+/// @Queue of unsent requests
 - (NSArray<NSString *> * _Nonnull)getSendingQueue SWIFT_WARN_UNUSED_RESULT;
-- (void)setSendingQueueWithItems:(NSArray<NSString *> * _Nonnull)items;
-- (NSMutableDictionary * _Nonnull)getUserAttributes SWIFT_WARN_UNUSED_RESULT;
+/// @Data sending ability trigger
+/// @# Notes: #
+/// @1. case <code>false</code>current  request will be add into  sendingQueue
+/// @2. case <code>true</code> will try send current request and one by one request from queue while it won’t be empty
+- (BOOL)getSendingAbility SWIFT_WARN_UNUSED_RESULT;
+- (NSMutableDictionary * _Nonnull)getUserAttributesWithOriginal:(BOOL)original SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+
+SWIFT_PROTOCOL("_TtP11MediatagSDK14SdkDataManager_")
+@protocol SdkDataManager
+- (NSArray<NSString *> * _Nonnull)getItemsFor:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+- (void)setItemsWithItems:(NSArray<NSString *> * _Nonnull)items into:(NSString * _Nonnull)key;
+@end
 
 #endif
 #if defined(__cplusplus)

@@ -15,6 +15,13 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MediatagSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "Event",
         "printedName": "Event",
@@ -191,8 +198,7 @@
             "mangledName": "$s11MediatagSDK5EventV11contactTypeAcA07ContactE0OSg_tcfc",
             "moduleName": "MediatagSDK",
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "init_kind": "Designated"
           },
@@ -442,8 +448,7 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1080,6 +1085,68 @@
                 "accessorKind": "_modify"
               }
             ]
+          },
+          {
+            "kind": "Function",
+            "name": "toQuery",
+            "printedName": "toQuery(mapQuery:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([Swift.String : Any?]) -> Swift.String",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any?]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11MediatagSDK5EventV7toQuery03mapE0S2SSDySSypSgGc_tF",
+            "mangledName": "$s11MediatagSDK5EventV7toQuery03mapE0S2SSDySSypSgGc_tF",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
@@ -1784,29 +1851,76 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "NSConfigurationType",
+        "printedName": "NSConfigurationType",
+        "declKind": "Protocol",
+        "usr": "s:11MediatagSDK19NSConfigurationTypeP",
+        "mangledName": "$s11MediatagSDK19NSConfigurationTypeP",
+        "moduleName": "MediatagSDK",
+        "genericSig": "<τ_0_0 : ObjectiveC.NSObject, τ_0_0 : MediatagSDK.ConfigurationType>",
+        "sugared_genericSig": "<Self : ObjectiveC.NSObject, Self : MediatagSDK.ConfigurationType>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "ConfigurationType",
+            "printedName": "ConfigurationType",
+            "usr": "s:11MediatagSDK17ConfigurationTypeP",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RequestConfiguration",
+            "printedName": "RequestConfiguration",
+            "usr": "s:11MediatagSDK20RequestConfigurationP",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "NSConfiguration",
         "printedName": "NSConfiguration",
         "children": [
           {
             "kind": "Var",
-            "name": "cid",
-            "printedName": "cid",
+            "name": "plugins",
+            "printedName": "plugins",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "[MediatagSDK.PluginTypeEnum]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MediatagSDK.PluginTypeEnum]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PluginTypeEnum",
+                        "printedName": "MediatagSDK.PluginTypeEnum",
+                        "usr": "s:11MediatagSDK14PluginTypeEnumO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK15NSConfigurationC3cidSSvp",
-            "mangledName": "$s11MediatagSDK15NSConfigurationC3cidSSvp",
+            "usr": "s:11MediatagSDK15NSConfigurationC7pluginsSayAA14PluginTypeEnumOGSgvp",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC7pluginsSayAA14PluginTypeEnumOGSgvp",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1817,14 +1931,30 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
+                    "name": "Optional",
+                    "printedName": "[MediatagSDK.PluginTypeEnum]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[MediatagSDK.PluginTypeEnum]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PluginTypeEnum",
+                            "printedName": "MediatagSDK.PluginTypeEnum",
+                            "usr": "s:11MediatagSDK14PluginTypeEnumO"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3cidSSvg",
-                "mangledName": "$s11MediatagSDK15NSConfigurationC3cidSSvg",
+                "usr": "s:11MediatagSDK15NSConfigurationC7pluginsSayAA14PluginTypeEnumOGSgvg",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC7pluginsSayAA14PluginTypeEnumOGSgvg",
                 "moduleName": "MediatagSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -1841,14 +1971,30 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
+                    "name": "Optional",
+                    "printedName": "[MediatagSDK.PluginTypeEnum]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[MediatagSDK.PluginTypeEnum]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PluginTypeEnum",
+                            "printedName": "MediatagSDK.PluginTypeEnum",
+                            "usr": "s:11MediatagSDK14PluginTypeEnumO"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3cidSSvs",
-                "mangledName": "$s11MediatagSDK15NSConfigurationC3cidSSvs",
+                "usr": "s:11MediatagSDK15NSConfigurationC7pluginsSayAA14PluginTypeEnumOGSgvs",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC7pluginsSayAA14PluginTypeEnumOGSgvs",
                 "moduleName": "MediatagSDK",
                 "implicit": true,
                 "accessorKind": "set"
@@ -1865,94 +2011,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3cidSSvM",
-                "mangledName": "$s11MediatagSDK15NSConfigurationC3cidSSvM",
-                "moduleName": "MediatagSDK",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "tms",
-            "printedName": "tms",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11MediatagSDK15NSConfigurationC3tmsSSvp",
-            "mangledName": "$s11MediatagSDK15NSConfigurationC3tmsSSvp",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3tmsSSvg",
-                "mangledName": "$s11MediatagSDK15NSConfigurationC3tmsSSvg",
-                "moduleName": "MediatagSDK",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3tmsSSvs",
-                "mangledName": "$s11MediatagSDK15NSConfigurationC3tmsSSvs",
-                "moduleName": "MediatagSDK",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3tmsSSvM",
-                "mangledName": "$s11MediatagSDK15NSConfigurationC3tmsSSvM",
+                "usr": "s:11MediatagSDK15NSConfigurationC7pluginsSayAA14PluginTypeEnumOGSgvM",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC7pluginsSayAA14PluginTypeEnumOGSgvM",
                 "moduleName": "MediatagSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -1980,13 +2040,15 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK15NSConfigurationC3hidSSSgvp",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)hid",
             "mangledName": "$s11MediatagSDK15NSConfigurationC3hidSSSgvp",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2011,10 +2073,13 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3hidSSSgvg",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)hid",
                 "mangledName": "$s11MediatagSDK15NSConfigurationC3hidSSSgvg",
                 "moduleName": "MediatagSDK",
                 "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
                 "accessorKind": "get"
               },
               {
@@ -2043,10 +2108,13 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3hidSSSgvs",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setHid:",
                 "mangledName": "$s11MediatagSDK15NSConfigurationC3hidSSSgvs",
                 "moduleName": "MediatagSDK",
                 "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
                 "accessorKind": "set"
               },
               {
@@ -2090,13 +2158,15 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK15NSConfigurationC3uidSSSgvp",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)uid",
             "mangledName": "$s11MediatagSDK15NSConfigurationC3uidSSSgvp",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2121,10 +2191,13 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3uidSSSgvg",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)uid",
                 "mangledName": "$s11MediatagSDK15NSConfigurationC3uidSSSgvg",
                 "moduleName": "MediatagSDK",
                 "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
                 "accessorKind": "get"
               },
               {
@@ -2153,10 +2226,13 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK15NSConfigurationC3uidSSSgvs",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setUid:",
                 "mangledName": "$s11MediatagSDK15NSConfigurationC3uidSSSgvs",
                 "moduleName": "MediatagSDK",
                 "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
                 "accessorKind": "set"
               },
               {
@@ -2173,6 +2249,639 @@
                 "declKind": "Accessor",
                 "usr": "s:11MediatagSDK15NSConfigurationC3uidSSSgvM",
                 "mangledName": "$s11MediatagSDK15NSConfigurationC3uidSSSgvM",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cid",
+            "printedName": "cid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)cid",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC3cidSSvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)cid",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC3cidSSvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "tms",
+            "printedName": "tms",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)tms",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC3tmsSSvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)tms",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC3tmsSSvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "baseUrl",
+            "printedName": "baseUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)baseUrl",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC7baseUrl10Foundation3URLVvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)baseUrl",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC7baseUrl10Foundation3URLVvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setBaseUrl:",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC7baseUrl10Foundation3URLVvs",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK15NSConfigurationC7baseUrl10Foundation3URLVvM",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC7baseUrl10Foundation3URLVvM",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encodingCharacterSet",
+            "printedName": "encodingCharacterSet",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)encodingCharacterSet",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC20encodingCharacterSetSSvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)encodingCharacterSet",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC20encodingCharacterSetSSvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setEncodingCharacterSet:",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC20encodingCharacterSetSSvs",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK15NSConfigurationC20encodingCharacterSetSSvM",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC20encodingCharacterSetSSvM",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encodingSet",
+            "printedName": "encodingSet",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)encodingSet",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC11encodingSetSDyS2SGvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "Lazy",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)encodingSet",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC11encodingSetSDyS2SGvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setEncodingSet:",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC11encodingSetSDyS2SGvs",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK15NSConfigurationC11encodingSetSDyS2SGvM",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC11encodingSetSDyS2SGvM",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dataManager",
+            "printedName": "dataManager",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MediatagSDK.SdkDataManager?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SdkDataManager",
+                    "printedName": "MediatagSDK.SdkDataManager",
+                    "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)dataManager",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC11dataManagerAA07SdkDataE0_pSgvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MediatagSDK.SdkDataManager?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SdkDataManager",
+                        "printedName": "MediatagSDK.SdkDataManager",
+                        "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)dataManager",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC11dataManagerAA07SdkDataE0_pSgvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MediatagSDK.SdkDataManager?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SdkDataManager",
+                        "printedName": "MediatagSDK.SdkDataManager",
+                        "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setDataManager:",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC11dataManagerAA07SdkDataE0_pSgvs",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK15NSConfigurationC11dataManagerAA07SdkDataE0_pSgvM",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC11dataManagerAA07SdkDataE0_pSgvM",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "heartbeatInterval",
+            "printedName": "heartbeatInterval",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)heartbeatInterval",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC17heartbeatIntervalSdvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)heartbeatInterval",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC17heartbeatIntervalSdvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setHeartbeatInterval:",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC17heartbeatIntervalSdvs",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK15NSConfigurationC17heartbeatIntervalSdvM",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC17heartbeatIntervalSdvM",
                 "moduleName": "MediatagSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -2290,6 +2999,124 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "uIdc",
+            "printedName": "uIdc",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(py)uIdc",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC4uIdcSo8NSNumberCSgvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)uIdc",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC4uIdcSo8NSNumberCSgvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setUIdc:",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC4uIdcSo8NSNumberCSgvs",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK15NSConfigurationC4uIdcSo8NSNumberCSgvM",
+                "mangledName": "$s11MediatagSDK15NSConfigurationC4uIdcSo8NSNumberCSgvM",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(cid:tms:uid:hid:uidc:)",
@@ -2324,6 +3151,7 @@
                     "usr": "s:SS"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -2338,6 +3166,7 @@
                     "usr": "s:SS"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -2352,6 +3181,7 @@
                     "usr": "c:objc(cs)NSNumber"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               }
             ],
@@ -2365,6 +3195,97 @@
               "ObjC"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(cid:tms:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NSConfiguration",
+                "printedName": "MediatagSDK.NSConfiguration",
+                "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)initWithCid:tms:",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC3cid3tmsACSS_SStcfc",
+            "moduleName": "MediatagSDK",
+            "objc_name": "initWithCid:tms:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "setPlugin",
+            "printedName": "setPlugin(withBase:modify:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Foundation.NSMutableURLRequest) -> Foundation.NSMutableURLRequest)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.NSMutableURLRequest) -> Foundation.NSMutableURLRequest",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSMutableURLRequest",
+                        "printedName": "Foundation.NSMutableURLRequest",
+                        "usr": "c:objc(cs)NSMutableURLRequest"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSMutableURLRequest",
+                        "printedName": "Foundation.NSMutableURLRequest",
+                        "usr": "c:objc(cs)NSMutableURLRequest"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSConfiguration(im)setPluginWithBase:modify:",
+            "mangledName": "$s11MediatagSDK15NSConfigurationC9setPlugin8withBase6modifyySb_So19NSMutableURLRequestCAHcSgtF",
+            "moduleName": "MediatagSDK",
+            "objc_name": "setPluginWithBase:modify:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Constructor",
@@ -2408,10 +3329,10 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "ConfigurationType",
-            "printedName": "ConfigurationType",
-            "usr": "s:11MediatagSDK17ConfigurationTypeP",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypeP"
+            "name": "NSConfigurationType",
+            "printedName": "NSConfigurationType",
+            "usr": "s:11MediatagSDK19NSConfigurationTypeP",
+            "mangledName": "$s11MediatagSDK19NSConfigurationTypeP"
           },
           {
             "kind": "Conformance",
@@ -2464,6 +3385,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "ConfigurationType",
+            "printedName": "ConfigurationType",
+            "usr": "s:11MediatagSDK17ConfigurationTypeP",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "RequestConfiguration",
             "printedName": "RequestConfiguration",
             "usr": "s:11MediatagSDK20RequestConfigurationP",
@@ -2493,8 +3421,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "DataManager",
-        "printedName": "DataManager",
+        "name": "SdkDataManager",
+        "printedName": "SdkDataManager",
         "children": [
           {
             "kind": "Function",
@@ -2523,12 +3451,15 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK11DataManagerP8getItems3forSaySSGSS_tF",
-            "mangledName": "$s11MediatagSDK11DataManagerP8getItems3forSaySSGSS_tF",
+            "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager(im)getItemsFor:",
+            "mangledName": "$s11MediatagSDK14SdkDataManagerP8getItems3forSaySSGSS_tF",
             "moduleName": "MediatagSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.DataManager>",
-            "sugared_genericSig": "<Self where Self : MediatagSDK.DataManager>",
+            "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.SdkDataManager>",
+            "sugared_genericSig": "<Self where Self : MediatagSDK.SdkDataManager>",
             "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
@@ -2564,24 +3495,28 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK11DataManagerP8setItems5items4intoySaySSG_SStF",
-            "mangledName": "$s11MediatagSDK11DataManagerP8setItems5items4intoySaySSG_SStF",
+            "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager(im)setItemsWithItems:into:",
+            "mangledName": "$s11MediatagSDK14SdkDataManagerP8setItems5items4intoySaySSG_SStF",
             "moduleName": "MediatagSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.DataManager>",
-            "sugared_genericSig": "<Self where Self : MediatagSDK.DataManager>",
+            "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.SdkDataManager>",
+            "sugared_genericSig": "<Self where Self : MediatagSDK.SdkDataManager>",
             "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
-        "usr": "s:11MediatagSDK11DataManagerP",
-        "mangledName": "$s11MediatagSDK11DataManagerP",
+        "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager",
+        "mangledName": "$s11MediatagSDK14SdkDataManagerP",
         "moduleName": "MediatagSDK",
         "genericSig": "<τ_0_0 : AnyObject>",
         "sugared_genericSig": "<Self : AnyObject>",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "ObjC"
         ]
       },
       {
@@ -2619,7 +3554,9 @@
             "usr": "s:11MediatagSDK23UserDefaultsDataManagerC8getItems3forSaySSGSS_tF",
             "mangledName": "$s11MediatagSDK23UserDefaultsDataManagerC8getItems3forSaySSGSS_tF",
             "moduleName": "MediatagSDK",
+            "objc_name": "getItemsFor:",
             "declAttributes": [
+              "ObjC",
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
@@ -2659,7 +3596,9 @@
             "usr": "s:11MediatagSDK23UserDefaultsDataManagerC8setItems5items4intoySaySSG_SStF",
             "mangledName": "$s11MediatagSDK23UserDefaultsDataManagerC8setItems5items4intoySaySSG_SStF",
             "moduleName": "MediatagSDK",
+            "objc_name": "setItemsWithItems:into:",
             "declAttributes": [
+              "ObjC",
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
@@ -2676,66 +3615,11 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "DataManager",
-            "printedName": "DataManager",
-            "usr": "s:11MediatagSDK11DataManagerP",
-            "mangledName": "$s11MediatagSDK11DataManagerP"
+            "name": "SdkDataManager",
+            "printedName": "SdkDataManager",
+            "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager",
+            "mangledName": "$s11MediatagSDK14SdkDataManagerP"
           }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "MediatagSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "PluginType",
-        "printedName": "PluginType",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "prepare",
-            "printedName": "prepare(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "URLRequest",
-                "printedName": "Foundation.URLRequest",
-                "usr": "s:10Foundation10URLRequestV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URLRequest",
-                "printedName": "Foundation.URLRequest",
-                "usr": "s:10Foundation10URLRequestV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11MediatagSDK10PluginTypeP7preparey10Foundation10URLRequestVAGF",
-            "mangledName": "$s11MediatagSDK10PluginTypeP7preparey10Foundation10URLRequestVAGF",
-            "moduleName": "MediatagSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.PluginType>",
-            "sugared_genericSig": "<Self where Self : MediatagSDK.PluginType>",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:11MediatagSDK10PluginTypeP",
-        "mangledName": "$s11MediatagSDK10PluginTypeP",
-        "moduleName": "MediatagSDK",
-        "declAttributes": [
-          "AccessControl"
         ]
       },
       {
@@ -2815,30 +3699,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[MediatagSDK.PluginType]?",
+                "name": "Array",
+                "printedName": "[MediatagSDK.PluginTypeEnum]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[MediatagSDK.PluginType]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "PluginType",
-                        "printedName": "MediatagSDK.PluginType",
-                        "usr": "s:11MediatagSDK10PluginTypeP"
-                      }
-                    ],
-                    "usr": "s:Sa"
+                    "name": "PluginTypeEnum",
+                    "printedName": "MediatagSDK.PluginTypeEnum",
+                    "usr": "s:11MediatagSDK14PluginTypeEnumO"
                   }
                 ],
-                "usr": "s:Sq"
+                "usr": "s:Sa"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK20RequestConfigurationP7pluginsSayAA10PluginType_pGSgvp",
-            "mangledName": "$s11MediatagSDK20RequestConfigurationP7pluginsSayAA10PluginType_pGSgvp",
+            "usr": "s:11MediatagSDK20RequestConfigurationP7pluginsSayAA14PluginTypeEnumOGvp",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP7pluginsSayAA14PluginTypeEnumOGvp",
             "moduleName": "MediatagSDK",
             "protocolReq": true,
             "declAttributes": [
@@ -2852,30 +3728,67 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[MediatagSDK.PluginType]?",
+                    "name": "Array",
+                    "printedName": "[MediatagSDK.PluginTypeEnum]",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Array",
-                        "printedName": "[MediatagSDK.PluginType]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PluginType",
-                            "printedName": "MediatagSDK.PluginType",
-                            "usr": "s:11MediatagSDK10PluginTypeP"
-                          }
-                        ],
-                        "usr": "s:Sa"
+                        "name": "PluginTypeEnum",
+                        "printedName": "MediatagSDK.PluginTypeEnum",
+                        "usr": "s:11MediatagSDK14PluginTypeEnumO"
                       }
                     ],
-                    "usr": "s:Sq"
+                    "usr": "s:Sa"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK20RequestConfigurationP7pluginsSayAA10PluginType_pGSgvg",
-                "mangledName": "$s11MediatagSDK20RequestConfigurationP7pluginsSayAA10PluginType_pGSgvg",
+                "usr": "s:11MediatagSDK20RequestConfigurationP7pluginsSayAA14PluginTypeEnumOGvg",
+                "mangledName": "$s11MediatagSDK20RequestConfigurationP7pluginsSayAA14PluginTypeEnumOGvg",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encodingCharacterSet",
+            "printedName": "encodingCharacterSet",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11MediatagSDK20RequestConfigurationP20encodingCharacterSetSSvp",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP20encodingCharacterSetSSvp",
+            "moduleName": "MediatagSDK",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK20RequestConfigurationP20encodingCharacterSetSSvg",
+                "mangledName": "$s11MediatagSDK20RequestConfigurationP20encodingCharacterSetSSvg",
                 "moduleName": "MediatagSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
                 "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
@@ -2889,79 +3802,6 @@
             "kind": "Var",
             "name": "encodingSet",
             "printedName": "encodingSet",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Foundation.CharacterSet]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CharacterSet",
-                    "printedName": "Foundation.CharacterSet",
-                    "usr": "s:10Foundation12CharacterSetV"
-                  }
-                ],
-                "usr": "s:SD"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11MediatagSDK20RequestConfigurationP11encodingSetSDySS10Foundation09CharacterF0VGvp",
-            "mangledName": "$s11MediatagSDK20RequestConfigurationP11encodingSetSDySS10Foundation09CharacterF0VGvp",
-            "moduleName": "MediatagSDK",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Foundation.CharacterSet]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CharacterSet",
-                        "printedName": "Foundation.CharacterSet",
-                        "usr": "s:10Foundation12CharacterSetV"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11MediatagSDK20RequestConfigurationP11encodingSetSDySS10Foundation09CharacterF0VGvg",
-                "mangledName": "$s11MediatagSDK20RequestConfigurationP11encodingSetSDySS10Foundation09CharacterF0VGvg",
-                "moduleName": "MediatagSDK",
-                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
-                "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "urlReplacingOccurrences",
-            "printedName": "urlReplacingOccurrences",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2985,8 +3825,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK20RequestConfigurationP23urlReplacingOccurrencesSDyS2SGvp",
-            "mangledName": "$s11MediatagSDK20RequestConfigurationP23urlReplacingOccurrencesSDyS2SGvp",
+            "usr": "s:11MediatagSDK20RequestConfigurationP11encodingSetSDyS2SGvp",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP11encodingSetSDyS2SGvp",
             "moduleName": "MediatagSDK",
             "protocolReq": true,
             "declAttributes": [
@@ -3020,8 +3860,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK20RequestConfigurationP23urlReplacingOccurrencesSDyS2SGvg",
-                "mangledName": "$s11MediatagSDK20RequestConfigurationP23urlReplacingOccurrencesSDyS2SGvg",
+                "usr": "s:11MediatagSDK20RequestConfigurationP11encodingSetSDyS2SGvg",
+                "mangledName": "$s11MediatagSDK20RequestConfigurationP11encodingSetSDyS2SGvg",
                 "moduleName": "MediatagSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
                 "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
@@ -3129,21 +3969,21 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "MediatagSDK.DataManager?",
+                "printedName": "MediatagSDK.SdkDataManager?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "DataManager",
-                    "printedName": "MediatagSDK.DataManager",
-                    "usr": "s:11MediatagSDK11DataManagerP"
+                    "name": "SdkDataManager",
+                    "printedName": "MediatagSDK.SdkDataManager",
+                    "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK20RequestConfigurationP11dataManagerAA04DataF0_pSgvp",
-            "mangledName": "$s11MediatagSDK20RequestConfigurationP11dataManagerAA04DataF0_pSgvp",
+            "usr": "s:11MediatagSDK20RequestConfigurationP11dataManagerAA07SdkDataF0_pSgvp",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP11dataManagerAA07SdkDataF0_pSgvp",
             "moduleName": "MediatagSDK",
             "protocolReq": true,
             "declAttributes": [
@@ -3158,21 +3998,21 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "MediatagSDK.DataManager?",
+                    "printedName": "MediatagSDK.SdkDataManager?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "DataManager",
-                        "printedName": "MediatagSDK.DataManager",
-                        "usr": "s:11MediatagSDK11DataManagerP"
+                        "name": "SdkDataManager",
+                        "printedName": "MediatagSDK.SdkDataManager",
+                        "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK20RequestConfigurationP11dataManagerAA04DataF0_pSgvg",
-                "mangledName": "$s11MediatagSDK20RequestConfigurationP11dataManagerAA04DataF0_pSgvg",
+                "usr": "s:11MediatagSDK20RequestConfigurationP11dataManagerAA07SdkDataF0_pSgvg",
+                "mangledName": "$s11MediatagSDK20RequestConfigurationP11dataManagerAA07SdkDataF0_pSgvg",
                 "moduleName": "MediatagSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
                 "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
@@ -3189,43 +4029,35 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[[Swift.String : Any?]]",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any?]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any?]",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Any?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ProtocolComposition",
-                            "printedName": "Any"
-                          }
-                        ],
-                        "usr": "s:Sq"
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
                       }
                     ],
-                    "usr": "s:SD"
+                    "usr": "s:Sq"
                   }
                 ],
-                "usr": "s:Sa"
+                "usr": "s:SD"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK20RequestConfigurationP7toQuerySaySDySSypSgGGyF",
-            "mangledName": "$s11MediatagSDK20RequestConfigurationP7toQuerySaySDySSypSgGGyF",
+            "usr": "s:11MediatagSDK20RequestConfigurationP7toQuerySDySSypSgGyF",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP7toQuerySDySSypSgGyF",
             "moduleName": "MediatagSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
             "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
@@ -3239,61 +4071,76 @@
           {
             "kind": "Function",
             "name": "mapQuery",
-            "printedName": "mapQuery(query:)",
+            "printedName": "mapQuery(items:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Foundation.URLQueryItem]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "URLQueryItem",
-                    "printedName": "Foundation.URLQueryItem",
-                    "usr": "s:10Foundation12URLQueryItemV"
-                  }
-                ],
-                "usr": "s:Sa"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[[Swift.String : Any?]]",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any?]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any?]",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Any?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ProtocolComposition",
-                            "printedName": "Any"
-                          }
-                        ],
-                        "usr": "s:Sq"
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
                       }
                     ],
-                    "usr": "s:SD"
+                    "usr": "s:Sq"
                   }
                 ],
-                "usr": "s:Sa"
+                "usr": "s:SD"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK20RequestConfigurationP8mapQuery5querySay10Foundation12URLQueryItemVGSaySDySSypSgGG_tF",
-            "mangledName": "$s11MediatagSDK20RequestConfigurationP8mapQuery5querySay10Foundation12URLQueryItemVGSaySDySSypSgGG_tF",
+            "usr": "s:11MediatagSDK20RequestConfigurationP8mapQuery5itemsSSSDySSypSgG_tF",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP8mapQuery5itemsSSSDySSypSgG_tF",
+            "moduleName": "MediatagSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
+            "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "buildURL",
+            "printedName": "buildURL(query:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11MediatagSDK20RequestConfigurationP8buildURL5query10Foundation0F0VSS_tF",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP8buildURL5query10Foundation0F0VSS_tF",
             "moduleName": "MediatagSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
             "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
@@ -3320,6 +4167,242 @@
         "name": "ConfigurationType",
         "printedName": "ConfigurationType",
         "children": [
+          {
+            "kind": "Var",
+            "name": "uid",
+            "printedName": "uid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11MediatagSDK17ConfigurationTypeP3uidSSSgvp",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypeP3uidSSSgvp",
+            "moduleName": "MediatagSDK",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK17ConfigurationTypeP3uidSSSgvg",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypeP3uidSSSgvg",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK17ConfigurationTypeP3uidSSSgvs",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypeP3uidSSSgvs",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK17ConfigurationTypeP3uidSSSgvM",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypeP3uidSSSgvM",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hid",
+            "printedName": "hid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11MediatagSDK17ConfigurationTypeP3hidSSSgvp",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypeP3hidSSSgvp",
+            "moduleName": "MediatagSDK",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK17ConfigurationTypeP3hidSSSgvg",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypeP3hidSSSgvg",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK17ConfigurationTypeP3hidSSSgvs",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypeP3hidSSSgvs",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK17ConfigurationTypeP3hidSSSgvM",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypeP3hidSSSgvM",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "uidc",
@@ -3378,6 +4461,63 @@
                 "protocolReq": true,
                 "reqNewWitnessTableEntry": true,
                 "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK17ConfigurationTypeP4uidcSiSgvs",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypeP4uidcSiSgvs",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK17ConfigurationTypeP4uidcSiSgvM",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypeP4uidcSiSgvM",
+                "moduleName": "MediatagSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
               }
             ]
           },
@@ -3462,128 +4602,6 @@
                 "declKind": "Accessor",
                 "usr": "s:11MediatagSDK17ConfigurationTypeP3tmsSSvg",
                 "mangledName": "$s11MediatagSDK17ConfigurationTypeP3tmsSSvg",
-                "moduleName": "MediatagSDK",
-                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
-                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "hid",
-            "printedName": "hid",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11MediatagSDK17ConfigurationTypeP3hidSSSgvp",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypeP3hidSSSgvp",
-            "moduleName": "MediatagSDK",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11MediatagSDK17ConfigurationTypeP3hidSSSgvg",
-                "mangledName": "$s11MediatagSDK17ConfigurationTypeP3hidSSSgvg",
-                "moduleName": "MediatagSDK",
-                "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
-                "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "uid",
-            "printedName": "uid",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11MediatagSDK17ConfigurationTypeP3uidSSSgvp",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypeP3uidSSSgvp",
-            "moduleName": "MediatagSDK",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11MediatagSDK17ConfigurationTypeP3uidSSSgvg",
-                "mangledName": "$s11MediatagSDK17ConfigurationTypeP3uidSSSgvg",
                 "moduleName": "MediatagSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
                 "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
@@ -3688,30 +4706,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[MediatagSDK.PluginType]?",
+                "name": "Array",
+                "printedName": "[MediatagSDK.PluginTypeEnum]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[MediatagSDK.PluginType]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "PluginType",
-                        "printedName": "MediatagSDK.PluginType",
-                        "usr": "s:11MediatagSDK10PluginTypeP"
-                      }
-                    ],
-                    "usr": "s:Sa"
+                    "name": "PluginTypeEnum",
+                    "printedName": "MediatagSDK.PluginTypeEnum",
+                    "usr": "s:11MediatagSDK14PluginTypeEnumO"
                   }
                 ],
-                "usr": "s:Sq"
+                "usr": "s:Sa"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK17ConfigurationTypePAAE7pluginsSayAA06PluginD0_pGSgvp",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE7pluginsSayAA06PluginD0_pGSgvp",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE7pluginsSayAA06PluginD4EnumOGvp",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE7pluginsSayAA06PluginD4EnumOGvp",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "AccessControl"
@@ -3725,30 +4735,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[MediatagSDK.PluginType]?",
+                    "name": "Array",
+                    "printedName": "[MediatagSDK.PluginTypeEnum]",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Array",
-                        "printedName": "[MediatagSDK.PluginType]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "PluginType",
-                            "printedName": "MediatagSDK.PluginType",
-                            "usr": "s:11MediatagSDK10PluginTypeP"
-                          }
-                        ],
-                        "usr": "s:Sa"
+                        "name": "PluginTypeEnum",
+                        "printedName": "MediatagSDK.PluginTypeEnum",
+                        "usr": "s:11MediatagSDK14PluginTypeEnumO"
                       }
                     ],
-                    "usr": "s:Sq"
+                    "usr": "s:Sa"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK17ConfigurationTypePAAE7pluginsSayAA06PluginD0_pGSgvg",
-                "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE7pluginsSayAA06PluginD0_pGSgvg",
+                "usr": "s:11MediatagSDK17ConfigurationTypePAAE7pluginsSayAA06PluginD4EnumOGvg",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE7pluginsSayAA06PluginD4EnumOGvg",
                 "moduleName": "MediatagSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
                 "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
@@ -3803,36 +4805,23 @@
           },
           {
             "kind": "Var",
-            "name": "encodingSet",
-            "printedName": "encodingSet",
+            "name": "encodingCharacterSet",
+            "printedName": "encodingCharacterSet",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Foundation.CharacterSet]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CharacterSet",
-                    "printedName": "Foundation.CharacterSet",
-                    "usr": "s:10Foundation12CharacterSetV"
-                  }
-                ],
-                "usr": "s:SD"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK17ConfigurationTypePAAE11encodingSetSDySS10Foundation09CharacterF0VGvp",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE11encodingSetSDySS10Foundation09CharacterF0VGvp",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE20encodingCharacterSetSSvp",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE20encodingCharacterSetSSvp",
             "moduleName": "MediatagSDK",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "isFromExtension": true,
             "accessors": [
@@ -3843,28 +4832,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Foundation.CharacterSet]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CharacterSet",
-                        "printedName": "Foundation.CharacterSet",
-                        "usr": "s:10Foundation12CharacterSetV"
-                      }
-                    ],
-                    "usr": "s:SD"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK17ConfigurationTypePAAE11encodingSetSDySS10Foundation09CharacterF0VGvg",
-                "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE11encodingSetSDySS10Foundation09CharacterF0VGvg",
+                "usr": "s:11MediatagSDK17ConfigurationTypePAAE20encodingCharacterSetSSvg",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE20encodingCharacterSetSSvg",
                 "moduleName": "MediatagSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
                 "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
@@ -3875,8 +4850,8 @@
           },
           {
             "kind": "Var",
-            "name": "urlReplacingOccurrences",
-            "printedName": "urlReplacingOccurrences",
+            "name": "encodingSet",
+            "printedName": "encodingSet",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3900,8 +4875,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK17ConfigurationTypePAAE23urlReplacingOccurrencesSDyS2SGvp",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE23urlReplacingOccurrencesSDyS2SGvp",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE11encodingSetSDyS2SGvp",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE11encodingSetSDyS2SGvp",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "AccessControl"
@@ -3935,8 +4910,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK17ConfigurationTypePAAE23urlReplacingOccurrencesSDyS2SGvg",
-                "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE23urlReplacingOccurrencesSDyS2SGvg",
+                "usr": "s:11MediatagSDK17ConfigurationTypePAAE11encodingSetSDyS2SGvg",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE11encodingSetSDyS2SGvg",
                 "moduleName": "MediatagSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
                 "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
@@ -3952,43 +4927,35 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[[Swift.String : Any?]]",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any?]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any?]",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Any?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ProtocolComposition",
-                            "printedName": "Any"
-                          }
-                        ],
-                        "usr": "s:Sq"
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
                       }
                     ],
-                    "usr": "s:SD"
+                    "usr": "s:Sq"
                   }
                 ],
-                "usr": "s:Sa"
+                "usr": "s:SD"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK17ConfigurationTypePAAE7toQuerySaySDySSypSgGGyF",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE7toQuerySaySDySSypSgGGyF",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE7toQuerySDySSypSgGyF",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE7toQuerySDySSypSgGyF",
             "moduleName": "MediatagSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
             "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
@@ -4006,21 +4973,21 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "MediatagSDK.DataManager?",
+                "printedName": "MediatagSDK.SdkDataManager?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "DataManager",
-                    "printedName": "MediatagSDK.DataManager",
-                    "usr": "s:11MediatagSDK11DataManagerP"
+                    "name": "SdkDataManager",
+                    "printedName": "MediatagSDK.SdkDataManager",
+                    "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11MediatagSDK17ConfigurationTypePAAE11dataManagerAA04DataF0_pSgvp",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE11dataManagerAA04DataF0_pSgvp",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE11dataManagerAA07SdkDataF0_pSgvp",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE11dataManagerAA07SdkDataF0_pSgvp",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "AccessControl"
@@ -4035,21 +5002,21 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "MediatagSDK.DataManager?",
+                    "printedName": "MediatagSDK.SdkDataManager?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "DataManager",
-                        "printedName": "MediatagSDK.DataManager",
-                        "usr": "s:11MediatagSDK11DataManagerP"
+                        "name": "SdkDataManager",
+                        "printedName": "MediatagSDK.SdkDataManager",
+                        "usr": "c:@M@MediatagSDK@objc(pl)SdkDataManager"
                       }
                     ],
                     "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11MediatagSDK17ConfigurationTypePAAE11dataManagerAA04DataF0_pSgvg",
-                "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE11dataManagerAA04DataF0_pSgvg",
+                "usr": "s:11MediatagSDK17ConfigurationTypePAAE11dataManagerAA07SdkDataF0_pSgvg",
+                "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE11dataManagerAA07SdkDataF0_pSgvg",
                 "moduleName": "MediatagSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
                 "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
@@ -4061,61 +5028,75 @@
           {
             "kind": "Function",
             "name": "mapQuery",
-            "printedName": "mapQuery(query:)",
+            "printedName": "mapQuery(items:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Foundation.URLQueryItem]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "URLQueryItem",
-                    "printedName": "Foundation.URLQueryItem",
-                    "usr": "s:10Foundation12URLQueryItemV"
-                  }
-                ],
-                "usr": "s:Sa"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[[Swift.String : Any?]]",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any?]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any?]",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Any?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ProtocolComposition",
-                            "printedName": "Any"
-                          }
-                        ],
-                        "usr": "s:Sq"
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
                       }
                     ],
-                    "usr": "s:SD"
+                    "usr": "s:Sq"
                   }
                 ],
-                "usr": "s:Sa"
+                "usr": "s:SD"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK17ConfigurationTypePAAE8mapQuery5querySay10Foundation12URLQueryItemVGSaySDySSypSgGG_tF",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE8mapQuery5querySay10Foundation12URLQueryItemVGSaySDySSypSgGG_tF",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE8mapQuery5itemsSSSDySSypSgG_tF",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE8mapQuery5itemsSSSDySSypSgG_tF",
+            "moduleName": "MediatagSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
+            "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "buildURL",
+            "printedName": "buildURL(query:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE8buildURL5query10Foundation0F0VSS_tF",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE8buildURL5query10Foundation0F0VSS_tF",
             "moduleName": "MediatagSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
             "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
@@ -4147,7 +5128,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Dictionary",
-                "printedName": "[Swift.String : Foundation.CharacterSet]",
+                "printedName": "[Swift.String : Swift.String]",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4157,9 +5138,9 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "CharacterSet",
-                    "printedName": "Foundation.CharacterSet",
-                    "usr": "s:10Foundation12CharacterSetV"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "paramValueOwnership": "InOut",
@@ -4178,8 +5159,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK17ConfigurationTypePAAE21prepareQueryItemValue11encodingSet3key5valueSSSgSDySS10Foundation09CharacterJ0VGz_SSyptF",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE21prepareQueryItemValue11encodingSet3key5valueSSSgSDySS10Foundation09CharacterJ0VGz_SSyptF",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE21prepareQueryItemValue11encodingSet3key5valueSSSgSDyS2SGz_SSyptF",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE21prepareQueryItemValue11encodingSet3key5valueSSSgSDyS2SGz_SSyptF",
             "moduleName": "MediatagSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
             "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",
@@ -4243,13 +5224,11 @@
             "moduleName": "MediatagSDK",
             "static": true,
             "declAttributes": [
-              "HasInitialValue",
               "Final",
-              "HasStorage",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
-            "hasStorage": true,
             "accessors": [
               {
                 "kind": "Accessor",
@@ -4268,63 +5247,11 @@
                 "mangledName": "$s11MediatagSDK010NSMediatagB0C6sharedACvgZ",
                 "moduleName": "MediatagSDK",
                 "static": true,
-                "implicit": true,
                 "declAttributes": [
                   "Final",
                   "ObjC"
                 ],
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSMediatagSDK",
-                    "printedName": "MediatagSDK.NSMediatagSDK",
-                    "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(cm)setShared:",
-                "mangledName": "$s11MediatagSDK010NSMediatagB0C6sharedACvsZ",
-                "moduleName": "MediatagSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11MediatagSDK010NSMediatagB0C6sharedACvMZ",
-                "mangledName": "$s11MediatagSDK010NSMediatagB0C6sharedACvMZ",
-                "moduleName": "MediatagSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -4401,6 +5328,7 @@
                     "usr": "s:SS"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -4415,6 +5343,7 @@
                     "usr": "s:SS"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -4429,6 +5358,7 @@
                     "usr": "c:objc(cs)NSNumber"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               }
             ],
@@ -4444,91 +5374,6 @@
               "RawDocComment"
             ],
             "init_kind": "Convenience"
-          },
-          {
-            "kind": "Function",
-            "name": "setConfiguration",
-            "printedName": "setConfiguration(cid:tms:uid:hid:uidc:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "ImplicitlyUnwrappedOptional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.NSNumber?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSNumber",
-                    "printedName": "Foundation.NSNumber",
-                    "usr": "c:objc(cs)NSNumber"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)setConfigurationWithCid:tms:uid:hid:uidc:",
-            "mangledName": "$s11MediatagSDK010NSMediatagB0C16setConfiguration3cid3tms3uid3hid4uidcySS_SSSgA2JSo8NSNumberCSgtF",
-            "moduleName": "MediatagSDK",
-            "objc_name": "setConfigurationWithCid:tms:uid:hid:uidc:",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
@@ -4561,8 +5406,73 @@
           },
           {
             "kind": "Function",
+            "name": "updateConfiguration",
+            "printedName": "updateConfiguration(uid:hid:uidc:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)updateConfigurationWithUid:hid:uidc:",
+            "mangledName": "$s11MediatagSDK010NSMediatagB0C19updateConfiguration3uid3hid4uidcySSSg_AHSo8NSNumberCSgtF",
+            "moduleName": "MediatagSDK",
+            "objc_name": "updateConfigurationWithUid:hid:uidc:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "next",
-            "printedName": "next(contactType:view:idc:idlc:fts:urlc:media:ver:)",
+            "printedName": "next(contactType:view:idc:idlc:urlc:media:ver:fts:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4605,27 +5515,45 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "NSString",
-                "printedName": "Foundation.NSString",
-                "usr": "c:objc(cs)NSString"
+                "name": "Optional",
+                "printedName": "Foundation.NSString?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Int64",
-                "printedName": "Swift.Int64",
-                "usr": "s:s5Int64V"
+                "name": "Optional",
+                "printedName": "Foundation.NSString?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
-                "name": "NSString",
-                "printedName": "Foundation.NSString",
-                "usr": "c:objc(cs)NSString"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -4640,73 +5568,27 @@
                   }
                 ],
                 "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)nextWithContactType:view:idc:idlc:fts:urlc:media:ver:",
-            "mangledName": "$s11MediatagSDK010NSMediatagB0C4next11contactType4view3idc4idlc3fts4urlc5media3verySo8NSNumberC_ANSgAOSo8NSStringCs5Int64VAQSSAOtF",
-            "moduleName": "MediatagSDK",
-            "objc_name": "nextWithContactType:view:idc:idlc:fts:urlc:media:ver:",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "next",
-            "printedName": "next(events:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[MediatagSDK.NSEvent]",
+                "name": "Optional",
+                "printedName": "Foundation.NSString?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "NSEvent",
-                    "printedName": "MediatagSDK.NSEvent",
-                    "usr": "c:@M@MediatagSDK@objc(cs)NSEvent"
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
                   }
                 ],
-                "usr": "s:Sa"
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)nextWithEvents:",
-            "mangledName": "$s11MediatagSDK010NSMediatagB0C4next6eventsySayAA7NSEventCG_tF",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)nextWithContactType:view:idc:idlc:urlc:media:ver:fts:",
+            "mangledName": "$s11MediatagSDK010NSMediatagB0C4next11contactType4view3idc4idlc4urlc5media3ver3ftsySo8NSNumberC_ANSgAOSo8NSStringCSgARSSSgAoRtF",
             "moduleName": "MediatagSDK",
-            "objc_name": "nextWithEvents:",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getSendingAbility",
-            "printedName": "getSendingAbility()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)getSendingAbility",
-            "mangledName": "$s11MediatagSDK010NSMediatagB0C17getSendingAbilitySbyF",
-            "moduleName": "MediatagSDK",
+            "objc_name": "nextWithContactType:view:idc:idlc:urlc:media:ver:fts:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
@@ -4740,62 +5622,58 @@
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
-            "name": "setSendingQueue",
-            "printedName": "setSendingQueue(items:)",
+            "name": "getSendingAbility",
+            "printedName": "getSendingAbility()",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Swift.String]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sa"
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)setSendingQueueWithItems:",
-            "mangledName": "$s11MediatagSDK010NSMediatagB0C15setSendingQueue5itemsySaySSG_tF",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)getSendingAbility",
+            "mangledName": "$s11MediatagSDK010NSMediatagB0C17getSendingAbilitySbyF",
             "moduleName": "MediatagSDK",
-            "objc_name": "setSendingQueueWithItems:",
             "declAttributes": [
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
             "name": "getUserAttributes",
-            "printedName": "getUserAttributes()",
+            "printedName": "getUserAttributes(original:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "NSMutableDictionary",
                 "printedName": "Foundation.NSMutableDictionary",
                 "usr": "c:objc(cs)NSMutableDictionary"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)getUserAttributes",
-            "mangledName": "$s11MediatagSDK010NSMediatagB0C17getUserAttributesSo19NSMutableDictionaryCyF",
+            "usr": "c:@M@MediatagSDK@objc(cs)NSMediatagSDK(im)getUserAttributesWithOriginal:",
+            "mangledName": "$s11MediatagSDK010NSMediatagB0C17getUserAttributes8originalSo19NSMutableDictionaryCSb_tF",
             "moduleName": "MediatagSDK",
+            "objc_name": "getUserAttributesWithOriginal:",
             "declAttributes": [
               "AccessControl",
               "ObjC"
@@ -4895,23 +5773,10 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
+        "name": "Darwin",
+        "printedName": "Darwin",
         "declKind": "Import",
-        "moduleName": "MediatagSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "MediatagSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
+        "moduleName": "MediatagSDK"
       },
       {
         "kind": "Import",
@@ -4924,25 +5789,212 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "AppTrackingTransparency",
-        "printedName": "AppTrackingTransparency",
-        "declKind": "Import",
-        "moduleName": "MediatagSDK"
+        "kind": "TypeDecl",
+        "name": "PluginType",
+        "printedName": "PluginType",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "prepare",
+            "printedName": "prepare(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11MediatagSDK10PluginTypeP7preparey10Foundation10URLRequestVAGF",
+            "mangledName": "$s11MediatagSDK10PluginTypeP7preparey10Foundation10URLRequestVAGF",
+            "moduleName": "MediatagSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.PluginType>",
+            "sugared_genericSig": "<Self where Self : MediatagSDK.PluginType>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:11MediatagSDK10PluginTypeP",
+        "mangledName": "$s11MediatagSDK10PluginTypeP",
+        "moduleName": "MediatagSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
       },
       {
-        "kind": "Import",
-        "name": "AdSupport",
-        "printedName": "AdSupport",
-        "declKind": "Import",
-        "moduleName": "MediatagSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "MediatagSDK"
+        "kind": "TypeDecl",
+        "name": "PluginTypeEnum",
+        "printedName": "PluginTypeEnum",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "customPlugin",
+            "printedName": "customPlugin",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MediatagSDK.PluginTypeEnum.Type) -> (MediatagSDK.PluginType) -> MediatagSDK.PluginTypeEnum",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MediatagSDK.PluginType) -> MediatagSDK.PluginTypeEnum",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PluginTypeEnum",
+                        "printedName": "MediatagSDK.PluginTypeEnum",
+                        "usr": "s:11MediatagSDK14PluginTypeEnumO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PluginType",
+                        "printedName": "MediatagSDK.PluginType",
+                        "usr": "s:11MediatagSDK10PluginTypeP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MediatagSDK.PluginTypeEnum.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PluginTypeEnum",
+                        "printedName": "MediatagSDK.PluginTypeEnum",
+                        "usr": "s:11MediatagSDK14PluginTypeEnumO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11MediatagSDK14PluginTypeEnumO06customC0yAcA0cD0_pcACmF",
+            "mangledName": "$s11MediatagSDK14PluginTypeEnumO06customC0yAcA0cD0_pcACmF",
+            "moduleName": "MediatagSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "customFunction",
+            "printedName": "customFunction",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MediatagSDK.PluginTypeEnum.Type) -> (@escaping (Foundation.NSMutableURLRequest) -> Foundation.NSMutableURLRequest) -> MediatagSDK.PluginTypeEnum",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(@escaping (Foundation.NSMutableURLRequest) -> Foundation.NSMutableURLRequest) -> MediatagSDK.PluginTypeEnum",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PluginTypeEnum",
+                        "printedName": "MediatagSDK.PluginTypeEnum",
+                        "usr": "s:11MediatagSDK14PluginTypeEnumO"
+                      },
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Foundation.NSMutableURLRequest) -> Foundation.NSMutableURLRequest",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSMutableURLRequest",
+                            "printedName": "Foundation.NSMutableURLRequest",
+                            "usr": "c:objc(cs)NSMutableURLRequest"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSMutableURLRequest",
+                            "printedName": "Foundation.NSMutableURLRequest",
+                            "usr": "c:objc(cs)NSMutableURLRequest"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MediatagSDK.PluginTypeEnum.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PluginTypeEnum",
+                        "printedName": "MediatagSDK.PluginTypeEnum",
+                        "usr": "s:11MediatagSDK14PluginTypeEnumO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11MediatagSDK14PluginTypeEnumO14customFunctionyACSo19NSMutableURLRequestCAFccACmF",
+            "mangledName": "$s11MediatagSDK14PluginTypeEnumO14customFunctionyACSo19NSMutableURLRequestCAFccACmF",
+            "moduleName": "MediatagSDK"
+          },
+          {
+            "kind": "Function",
+            "name": "prepare",
+            "printedName": "prepare(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11MediatagSDK14PluginTypeEnumO7preparey10Foundation10URLRequestVAGF",
+            "mangledName": "$s11MediatagSDK14PluginTypeEnumO7preparey10Foundation10URLRequestVAGF",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11MediatagSDK14PluginTypeEnumO",
+        "mangledName": "$s11MediatagSDK14PluginTypeEnumO",
+        "moduleName": "MediatagSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "PluginType",
+            "printedName": "PluginType",
+            "usr": "s:11MediatagSDK10PluginTypeP",
+            "mangledName": "$s11MediatagSDK10PluginTypeP"
+          }
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -5720,6 +6772,46 @@
           },
           {
             "kind": "Var",
+            "name": "tms",
+            "printedName": "tms",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "QueryKeys",
+                    "printedName": "MediatagSDK.QueryKeys",
+                    "usr": "s:11MediatagSDK9QueryKeysO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MediatagSDK.QueryKeys.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "QueryKeys",
+                        "printedName": "MediatagSDK.QueryKeys",
+                        "usr": "s:11MediatagSDK9QueryKeysO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11MediatagSDK9QueryKeysO3tmsyA2CmF",
+            "mangledName": "$s11MediatagSDK9QueryKeysO3tmsyA2CmF",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "uid",
             "printedName": "uid",
             "children": [
@@ -5753,7 +6845,10 @@
             "declKind": "EnumElement",
             "usr": "s:11MediatagSDK9QueryKeysO3uidyA2CmF",
             "mangledName": "$s11MediatagSDK9QueryKeysO3uidyA2CmF",
-            "moduleName": "MediatagSDK"
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -5830,46 +6925,6 @@
             "declKind": "EnumElement",
             "usr": "s:11MediatagSDK9QueryKeysO3idcyA2CmF",
             "mangledName": "$s11MediatagSDK9QueryKeysO3idcyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "tms",
-            "printedName": "tms",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO3tmsyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO3tmsyA2CmF",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "RawDocComment"
@@ -6237,399 +7292,6 @@
           },
           {
             "kind": "Var",
-            "name": "dvi",
-            "printedName": "dvi",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO3dviyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO3dviyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "dvm",
-            "printedName": "dvm",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO3dvmyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO3dvmyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "dvn",
-            "printedName": "dvn",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO3dvnyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO3dvnyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "appn",
-            "printedName": "appn",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO4appnyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO4appnyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "appv",
-            "printedName": "appv",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO4appvyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO4appvyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "typ",
-            "printedName": "typ",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO3typyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO3typyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "os",
-            "printedName": "os",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO2osyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO2osyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "sid",
-            "printedName": "sid",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO3sidyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO3sidyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "tsc",
-            "printedName": "tsc",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(MediatagSDK.QueryKeys.Type) -> MediatagSDK.QueryKeys",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "MediatagSDK.QueryKeys.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "QueryKeys",
-                        "printedName": "MediatagSDK.QueryKeys",
-                        "usr": "s:11MediatagSDK9QueryKeysO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:11MediatagSDK9QueryKeysO3tscyA2CmF",
-            "mangledName": "$s11MediatagSDK9QueryKeysO3tscyA2CmF",
-            "moduleName": "MediatagSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(rawValue:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "MediatagSDK.QueryKeys?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "QueryKeys",
-                    "printedName": "MediatagSDK.QueryKeys",
-                    "usr": "s:11MediatagSDK9QueryKeysO"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:11MediatagSDK9QueryKeysO8rawValueACSgSS_tcfc",
-            "mangledName": "$s11MediatagSDK9QueryKeysO8rawValueACSgSS_tcfc",
-            "moduleName": "MediatagSDK",
-            "implicit": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Var",
             "name": "rawValue",
             "printedName": "rawValue",
             "children": [
@@ -6666,6 +7328,39 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MediatagSDK.QueryKeys?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "QueryKeys",
+                    "printedName": "MediatagSDK.QueryKeys",
+                    "usr": "s:11MediatagSDK9QueryKeysO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11MediatagSDK9QueryKeysO8rawValueACSgSS_tcfc",
+            "mangledName": "$s11MediatagSDK9QueryKeysO8rawValueACSgSS_tcfc",
+            "moduleName": "MediatagSDK",
+            "implicit": true,
+            "init_kind": "Designated"
           }
         ],
         "declKind": "Enum",
@@ -6738,6 +7433,27 @@
       },
       {
         "kind": "Import",
+        "name": "AppTrackingTransparency",
+        "printedName": "AppTrackingTransparency",
+        "declKind": "Import",
+        "moduleName": "MediatagSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "AdSupport",
+        "printedName": "AdSupport",
+        "declKind": "Import",
+        "moduleName": "MediatagSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MediatagSDK"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -6758,6 +7474,71 @@
         "name": "Mediatag",
         "printedName": "Mediatag",
         "children": [
+          {
+            "kind": "Var",
+            "name": "configuration",
+            "printedName": "configuration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "MediatagSDK.ConfigurationType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConfigurationType",
+                    "printedName": "MediatagSDK.ConfigurationType",
+                    "usr": "s:11MediatagSDK17ConfigurationTypeP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11MediatagSDK0A0C13configurationAA17ConfigurationType_pSgvp",
+            "mangledName": "$s11MediatagSDK0A0C13configurationAA17ConfigurationType_pSgvp",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "MediatagSDK.ConfigurationType?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConfigurationType",
+                        "printedName": "MediatagSDK.ConfigurationType",
+                        "usr": "s:11MediatagSDK17ConfigurationTypeP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11MediatagSDK0A0C13configurationAA17ConfigurationType_pSgvg",
+                "mangledName": "$s11MediatagSDK0A0C13configurationAA17ConfigurationType_pSgvg",
+                "moduleName": "MediatagSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "sendingIsAvailable",
@@ -6945,6 +7726,7 @@
                     "usr": "s:SS"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -6959,6 +7741,7 @@
                     "usr": "s:SS"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -6973,6 +7756,7 @@
                     "usr": "c:objc(cs)NSNumber"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               }
             ],
@@ -7029,6 +7813,7 @@
                     "usr": "s:SS"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -7043,6 +7828,7 @@
                     "usr": "s:SS"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -7057,6 +7843,7 @@
                     "usr": "c:objc(cs)NSNumber"
                   }
                 ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               }
             ],
@@ -7101,6 +7888,73 @@
           },
           {
             "kind": "Function",
+            "name": "updateConfiguration",
+            "printedName": "updateConfiguration(uid:hid:uidc:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11MediatagSDK0A0C19updateConfiguration3uid3hid4uidcySSSg_AHSiSgtF",
+            "mangledName": "$s11MediatagSDK0A0C19updateConfiguration3uid3hid4uidcySSSg_AHSiSgtF",
+            "moduleName": "MediatagSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "next",
             "printedName": "next(_:)",
             "children": [
@@ -7129,32 +7983,18 @@
           },
           {
             "kind": "Function",
-            "name": "next",
-            "printedName": "next(_:)",
+            "name": "stop",
+            "printedName": "stop()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[MediatagSDK.Event]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Event",
-                    "printedName": "MediatagSDK.Event",
-                    "usr": "s:11MediatagSDK5EventV"
-                  }
-                ],
-                "usr": "s:Sa"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK0A0C4nextyySayAA5EventVGF",
-            "mangledName": "$s11MediatagSDK0A0C4nextyySayAA5EventVGF",
+            "usr": "s:11MediatagSDK0A0C4stopyyF",
+            "mangledName": "$s11MediatagSDK0A0C4stopyyF",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "Final",
@@ -7284,92 +8124,48 @@
             ]
           },
           {
-            "kind": "Var",
-            "name": "userAttributes",
-            "printedName": "userAttributes",
+            "kind": "Function",
+            "name": "getUserAttributes",
+            "printedName": "getUserAttributes(original:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[[Swift.String : Any]]",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ProtocolComposition",
-                        "printedName": "Any"
-                      }
-                    ],
-                    "usr": "s:SD"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
                   }
                 ],
-                "usr": "s:Sa"
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
-            "declKind": "Var",
-            "usr": "s:11MediatagSDK0A0C14userAttributesSaySDySSypGGvp",
-            "mangledName": "$s11MediatagSDK0A0C14userAttributesSaySDySSypGGvp",
+            "declKind": "Func",
+            "usr": "s:11MediatagSDK0A0C17getUserAttributes8originalSDySSypGSb_tF",
+            "mangledName": "$s11MediatagSDK0A0C17getUserAttributes8originalSDySSypGSb_tF",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[[Swift.String : Any]]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Dictionary",
-                        "printedName": "[Swift.String : Any]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ProtocolComposition",
-                            "printedName": "Any"
-                          }
-                        ],
-                        "usr": "s:SD"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11MediatagSDK0A0C14userAttributesSaySDySSypGGvg",
-                "mangledName": "$s11MediatagSDK0A0C14userAttributesSaySDySSypGGvg",
-                "moduleName": "MediatagSDK",
-                "declAttributes": [
-                  "Final"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -7395,35 +8191,63 @@
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/RingBuffer.swift",
       "kind": "IntegerLiteral",
-      "offset": 367,
+      "offset": 226,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/RingBuffer.swift",
       "kind": "IntegerLiteral",
-      "offset": 400,
+      "offset": 259,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 204,
+      "offset": 770,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 235,
+      "offset": 908,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 129,
+      "offset": 1041,
+      "length": 34,
+      "value": "\"https:\/\/tns-counter.ru\/e\/msdkev\/\""
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSConfiguration.swift",
+      "kind": "StringLiteral",
+      "offset": 1258,
+      "length": 22,
+      "value": "\"!*'();:@&=+$,\/?%#[] \""
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSConfiguration.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1741,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSConfiguration.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2315,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSConfiguration.swift",
+      "kind": "StringLiteral",
+      "offset": 291,
       "length": 15,
       "value": "\"MediatagSDK.NSConfiguration\""
     },
@@ -7457,13 +8281,6 @@
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
-      "kind": "Array",
-      "offset": 462,
-      "length": 5,
-      "value": "[[]]"
-    },
-    {
-      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
       "kind": "BooleanLiteral",
       "offset": 599,
       "length": 5,
@@ -7485,40 +8302,19 @@
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSMediatagSDK.swift",
-      "kind": "StringLiteral",
-      "offset": 245,
-      "length": 2,
-      "value": "\"\""
+      "kind": "BooleanLiteral",
+      "offset": 2843,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSMediatagSDK.swift",
       "kind": "StringLiteral",
-      "offset": 254,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/NS\/NSMediatagSDK.swift",
-      "kind": "StringLiteral",
-      "offset": 127,
+      "offset": 126,
       "length": 13,
       "value": "\"MediatagSDK.NSMediatagSDK\""
     },
     {
-      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/DeviceData.swift",
-      "kind": "BooleanLiteral",
-      "offset": 269,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/DeviceData.swift",
-      "kind": "StringLiteral",
-      "offset": 1003,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/models\/ModelEnums.swift",
       "kind": "IntegerLiteral",
       "offset": 158,
@@ -7773,44 +8569,58 @@
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/DefaultPackageData.swift",
       "kind": "BooleanLiteral",
-      "offset": 181,
+      "offset": 305,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/DefaultPackageData.swift",
+      "kind": "StringLiteral",
+      "offset": 350,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/DefaultPackageData.swift",
+      "kind": "StringLiteral",
+      "offset": 2911,
+      "length": 3,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1062,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
+      "kind": "StringLiteral",
+      "offset": 1293,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
+      "kind": "StringLiteral",
+      "offset": 1302,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
       "kind": "Array",
-      "offset": 421,
+      "offset": 1615,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
       "kind": "BooleanLiteral",
-      "offset": 1117,
+      "offset": 4353,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
-      "kind": "StringLiteral",
-      "offset": 1330,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
-      "kind": "StringLiteral",
-      "offset": 1339,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
-      "kind": "Array",
-      "offset": 1683,
-      "length": 2,
-      "value": "[]"
     }
   ]
 }

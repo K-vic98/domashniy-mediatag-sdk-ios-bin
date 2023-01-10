@@ -30,10 +30,13 @@
   ```
 
 - `plugins`
-  набор объектов преобразования URLRequest перед его отправкой [пример](/#подготовка-запроса)
+  набор объектов преобразования URLRequest перед его отправкой
   ```swift
-     var plugins: [PluginType]?
+     var plugins: [PluginTypeEnum]?
   ```
+  протоколо PluginType требует имплементацию функции: `func prepare(_ request: URLRequest) -> URLRequest`
+    - customPlugin(PluginType) - с использованием имплементации протокола PluginType [пример](/#подготовка-запроса)
+    - customFunction((_ request: NSMutableURLRequest) -> NSMutableURLRequest) - через предикат
 
 - `encodingSet`
   преобразует URLQueryItem[key] используя value
@@ -41,12 +44,6 @@
     var encode: [String: CharacterSet]
   ```
   > при переопределении данного параметра установите .urlHostAllowed для urlc, media
-
-- `urlReplacingOccurrences`
-  Замените все вхождения целевого URL значением соответствующего ключа.
-  ```swift
-    var urlReplacingOccurrences: [String: String]
-  ```
 
 - `sendingQueueBufferSize`
   размер буфера для хранения данный в случае отсутствия соединения с интренетом
@@ -66,19 +63,25 @@
 - `toQuery()` 
   преобразовать конфигурацию в Dictionary<String, Any?> для [инициализации](./../#Проверка-базовых-аттрибутов) элементов базового url
   ```swift
-    func toQuery() -> [[String: Any?]] {}
+    func toQuery() -> [String: Any?] {}
   ```
 
 - `mapQuery` 
-  измените элементы запроса URL-адреса перед отправкой запроса по адресу `только при инициализации url`:
+    преобразовать `toQuery()` в query: String`:
   ```swift
-    func mapQuery(query: [[String: Any?]]) -> [URLQueryItem] {}
+    func mapQuery(query: [String: Any?]) -> String {}
   ```
    - [x] для прроверки
    - [x] фильтрации
    - [x] добавления кастомных параметров
    
-
+- `buildURL(query: String)`
+  сгенерировать исходный URL для отправки
+  ```swift
+    public func buildURL(query: String) -> URL {
+      return baseUrl + query
+    }
+  ```swift
 ### Запуск
 ```swift
   // user variable 
@@ -96,8 +99,9 @@
       return request
     }
   }
-
-  let mediatagSDK = MediatagSDK(configuration: config, plugins: [SDKPlugin()])
+  var plugins: [PluginTypeEnum] {
+    [.customPlugin(SDKPlugin())]
+  }
   
 ```
 ### Преобразование значений URLQueryItem

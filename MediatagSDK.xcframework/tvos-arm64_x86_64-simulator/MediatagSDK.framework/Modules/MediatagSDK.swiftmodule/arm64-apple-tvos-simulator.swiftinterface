@@ -14,7 +14,7 @@ import _Concurrency
 import _StringProcessing
 public struct Event : Swift.Equatable, Swift.Hashable {
   public init(contactType: MediatagSDK.ContactType!, view: MediatagSDK.EventType? = nil, idc: Swift.Int? = nil, idlc: Swift.String? = nil, fts: Swift.Int64? = nil, urlc: Swift.String? = nil, media: Swift.String? = nil, ver: Swift.Int? = nil)
-  public init(contactType: MediatagSDK.ContactType!)
+  public init(contactType: MediatagSDK.ContactType)
   public var tsu: Swift.Int {
     get
   }

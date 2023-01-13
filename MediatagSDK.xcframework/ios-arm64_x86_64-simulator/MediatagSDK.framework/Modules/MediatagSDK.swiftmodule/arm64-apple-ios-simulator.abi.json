@@ -180,22 +180,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "ImplicitlyUnwrappedOptional",
-                "printedName": "MediatagSDK.ContactType?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ContactType",
-                    "printedName": "MediatagSDK.ContactType",
-                    "usr": "s:11MediatagSDK11ContactTypeO"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "ContactType",
+                "printedName": "MediatagSDK.ContactType",
+                "usr": "s:11MediatagSDK11ContactTypeO"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11MediatagSDK5EventV11contactTypeAcA07ContactE0OSg_tcfc",
-            "mangledName": "$s11MediatagSDK5EventV11contactTypeAcA07ContactE0OSg_tcfc",
+            "usr": "s:11MediatagSDK5EventV11contactTypeAcA07ContactE0O_tcfc",
+            "mangledName": "$s11MediatagSDK5EventV11contactTypeAcA07ContactE0O_tcfc",
             "moduleName": "MediatagSDK",
             "declAttributes": [
               "AccessControl"
@@ -8261,35 +8253,49 @@
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
       "kind": "StringLiteral",
+      "offset": 266,
+      "length": 37,
+      "value": "\"com.tsifrasoftEventSDKsending.queue\""
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
+      "kind": "StringLiteral",
       "offset": 222,
       "length": 13,
       "value": "\"sendingData\""
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
+      "kind": "StringLiteral",
+      "offset": 266,
+      "length": 37,
+      "value": "\"com.tsifrasoftEventSDKsending.queue\""
+    },
+    {
+      "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
       "kind": "BooleanLiteral",
-      "offset": 273,
+      "offset": 341,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
       "kind": "BooleanLiteral",
-      "offset": 366,
+      "offset": 434,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
       "kind": "BooleanLiteral",
-      "offset": 599,
+      "offset": 667,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/SendService.swift",
       "kind": "Array",
-      "offset": 737,
+      "offset": 805,
       "length": 2,
       "value": "[]"
     },
@@ -8583,42 +8589,42 @@
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/DefaultPackageData.swift",
       "kind": "StringLiteral",
-      "offset": 2911,
+      "offset": 3189,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
       "kind": "BooleanLiteral",
-      "offset": 1062,
+      "offset": 1367,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
       "kind": "StringLiteral",
-      "offset": 1293,
+      "offset": 1598,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
       "kind": "StringLiteral",
-      "offset": 1302,
+      "offset": 1607,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
       "kind": "Array",
-      "offset": 1615,
+      "offset": 1920,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sergeyzhidkov\/Documents\/_Work\/EventSDK\/media-tag-sdk-MediaScop\/Sources\/Mediatag.swift",
       "kind": "BooleanLiteral",
-      "offset": 4353,
+      "offset": 4773,
       "length": 5,
       "value": "false"
     }

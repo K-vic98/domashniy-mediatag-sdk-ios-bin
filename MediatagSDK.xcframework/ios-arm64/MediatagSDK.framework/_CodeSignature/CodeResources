@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		AULogA09A4HczOA/enlQzaYwznE=
+		QwAogeamGBtpqIrPLEGKTY0wE1Q=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		8NrqirQPviSQXR+MZQCI3u0oPIo=
+		coEcaxb8zD6dVOpQmjn9bbj4sFs=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		8NrqirQPviSQXR+MZQCI3u0oPIo=
+		coEcaxb8zD6dVOpQmjn9bbj4sFs=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		3uAQHXWTHJpJ8ZhdkMaS3kyOenk=
+		ybXKs1wYowTj0uvWovCPtoPN0kg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,14 +61,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YoSBADX5GV210X0l+whCyEx1ZeYVgfdNKln2VlmsbCs=
+			GLhSOh6rwY9ukB1wIuKQgc3+ZWNRBxA9pIjXe4NyZIo=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0YaixYdJB8Wv3nbhOm8DMAae99Wn5ErOXZmeFKvU44s=
+			Qn4PFT1Canew99pgwIil2fGwTtjkRQRvpMdZMaJsqGk=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -82,14 +82,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0YaixYdJB8Wv3nbhOm8DMAae99Wn5ErOXZmeFKvU44s=
+			Qn4PFT1Canew99pgwIil2fGwTtjkRQRvpMdZMaJsqGk=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QetIIm0a+30kczj96OcNF4Zh8QdEnUZ/8gHo0RxH0/Y=
+			0C+TFRHs4L5p3pBS5sME4azctEFIIJjlPAf5/v/XsM0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

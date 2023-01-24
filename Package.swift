@@ -16,7 +16,7 @@ let package = Package(
     targets: [
       .binaryTarget(
           name: "MediatagSDK",
-          url: "https://github.com/MEDIASCOPE-JSC/mediatag-sdk-ios-bin/archive/refs/tags/1.0.9.zip",
+          url: "https://github.com/MEDIASCOPE-JSC/mediatag-sdk-ios-bin/archive/refs/tags/1.1.0.zip",
           checksum: "f41510620d4c5d3b1625f24e7236d84b9bf7a1ad0a27e65f90b876954c7d18e1"
       )
     ]

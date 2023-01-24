@@ -4119,9 +4119,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -4131,8 +4131,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK20RequestConfigurationP8buildURL5query10Foundation0F0VSS_tF",
-            "mangledName": "$s11MediatagSDK20RequestConfigurationP8buildURL5query10Foundation0F0VSS_tF",
+            "usr": "s:11MediatagSDK20RequestConfigurationP8buildURL5queryS2S_tF",
+            "mangledName": "$s11MediatagSDK20RequestConfigurationP8buildURL5queryS2S_tF",
             "moduleName": "MediatagSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.RequestConfiguration>",
             "sugared_genericSig": "<Self where Self : MediatagSDK.RequestConfiguration>",
@@ -5075,9 +5075,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -5087,8 +5087,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11MediatagSDK17ConfigurationTypePAAE8buildURL5query10Foundation0F0VSS_tF",
-            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE8buildURL5query10Foundation0F0VSS_tF",
+            "usr": "s:11MediatagSDK17ConfigurationTypePAAE8buildURL5queryS2S_tF",
+            "mangledName": "$s11MediatagSDK17ConfigurationTypePAAE8buildURL5queryS2S_tF",
             "moduleName": "MediatagSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : MediatagSDK.ConfigurationType>",
             "sugared_genericSig": "<Self where Self : MediatagSDK.ConfigurationType>",

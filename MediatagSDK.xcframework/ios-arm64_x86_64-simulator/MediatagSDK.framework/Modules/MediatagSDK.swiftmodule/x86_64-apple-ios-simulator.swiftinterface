@@ -107,7 +107,7 @@ public protocol RequestConfiguration : AnyObject {
   var dataManager: MediatagSDK.SdkDataManager? { get }
   func toQuery() -> [Swift.String : Any?]
   func mapQuery(items: [Swift.String : Any?]) -> Swift.String
-  func buildURL(query: Swift.String) -> Foundation.URL
+  func buildURL(query: Swift.String) -> Swift.String
 }
 public protocol ConfigurationType : MediatagSDK.RequestConfiguration {
   var uid: Swift.String? { get set }
@@ -154,7 +154,7 @@ extension MediatagSDK.ConfigurationType {
     get
   }
   public func mapQuery(items: [Swift.String : Any?]) -> Swift.String
-  public func buildURL(query: Swift.String) -> Foundation.URL
+  public func buildURL(query: Swift.String) -> Swift.String
   public func prepareQueryItemValue(encodingSet: inout [Swift.String : Swift.String], key: Swift.String, value: Any) -> Swift.String?
 }
 public protocol PluginType {

@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-tvos12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MediatagSDK
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.5.2 effective-4.1.50 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-tvos12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name MediatagSDK
 import AdSupport
 import AppTrackingTransparency
 import Darwin
@@ -11,7 +10,6 @@ import Network
 import Swift
 import UIKit
 import _Concurrency
-import _StringProcessing
 public struct Event : Swift.Equatable, Swift.Hashable {
   public init(contactType: MediatagSDK.ContactType!, view: MediatagSDK.EventType? = nil, idc: Swift.Int? = nil, idlc: Swift.String? = nil, fts: Swift.Int64? = nil, urlc: Swift.String? = nil, media: Swift.String? = nil, ver: Swift.Int? = nil)
   public init(contactType: MediatagSDK.ContactType)

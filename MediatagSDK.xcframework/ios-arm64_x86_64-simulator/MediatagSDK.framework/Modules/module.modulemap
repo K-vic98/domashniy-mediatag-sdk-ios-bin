@@ -6,6 +6,6 @@ framework module MediatagSDK {
 }
 
 module MediatagSDK.Swift {
-  header "MediatagSDK-Swift.h"
-  requires objc
+    header "MediatagSDK-Swift.h"
+    requires objc
 }

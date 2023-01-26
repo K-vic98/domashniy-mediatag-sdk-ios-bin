@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MediatagSDK-Swift.h</key>
 		<data>
-		1t08/qdlHvj6xN2FHfnSerjxmtM=
+		OTvzwKOPlckah58szr49DkSPad0=
 		</data>
 		<key>Headers/MediatagSDK.h</key>
 		<data>
@@ -14,31 +14,35 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Pwb5BpL5461y9NJIHnVgJv6Zfi0=
-		</data>
-		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.abi.json</key>
-		<data>
-		7NSgQd7UXsMMsiHh4Bb590yES0o=
-		</data>
-		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
-		<data>
-		fP/aG91LRESDvPGtqYFtV1HBIGA=
+		3eVw2Oy97VmBMqG8mZ95kbCjEus=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<data>
-		0JoBIRumbhZJPzNRZ5yV32g4eXo=
+		/EeSQmJ4UcPQ+/Pwq/ogtIU+Jp4=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<data>
-		fP/aG91LRESDvPGtqYFtV1HBIGA=
+		ahdxgmCDKc/BJ4BG4ILg9thnKxo=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<data>
-		dC/gRkssVzlauCbqIu1sSgSSWuI=
+		NBeZys0c+pKHDSQRKZNyR63IuIA=
+		</data>
+		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftdoc</key>
+		<data>
+		/EeSQmJ4UcPQ+/Pwq/ogtIU+Jp4=
+		</data>
+		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftinterface</key>
+		<data>
+		ahdxgmCDKc/BJ4BG4ILg9thnKxo=
+		</data>
+		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftmodule</key>
+		<data>
+		NBeZys0c+pKHDSQRKZNyR63IuIA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		n/egLYP9L6fDZdtP07dB2TgpSyU=
+		gD00sB++Dr5u6bI7UGSFSRcUAcY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -47,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cu+gGpFES+w8k7zesyo7sChqKR0js6ev0RxtoCzZcHs=
+			NX9BvArf4q5QY2Cmf+w8se1k+6ZOA63+0Cvg17G9gk4=
 			</data>
 		</dict>
 		<key>Headers/MediatagSDK.h</key>
@@ -57,46 +61,53 @@
 			dBUFkk9Ntnht2GvSnGze5V7mvVaEg5Uol4QVbsxQ+uE=
 			</data>
 		</dict>
-		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.abi.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			5wq3L6sHMcBGuKuxU2V3GMwGAMW3REwiZJwLcWjZhUE=
-			</data>
-		</dict>
-		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ugUsKQGkyjFfthpvvRb8yeDLaSWzj/695YWe+j8QNAM=
-			</data>
-		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MocVzYaOEgEV9fFNmJif14aAZpSiVPGlmhlzEcg0CC4=
+			HlP9ttV9ZFRqgG5zMg6+e4fRNYNuw3SmOyqmhJwQxjw=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ugUsKQGkyjFfthpvvRb8yeDLaSWzj/695YWe+j8QNAM=
+			dXMSsw04bP03S3bmpVl3cnkB7WYdMI310LqD2FZgtdc=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oWBSi13KDIjDG5pFwki+WADWAxzTfHc/NN0PyzSSvOg=
+			tjWzP0yjJPfchnuHeW9nmUcxibozKHOisdOLYU3kyfA=
+			</data>
+		</dict>
+		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HlP9ttV9ZFRqgG5zMg6+e4fRNYNuw3SmOyqmhJwQxjw=
+			</data>
+		</dict>
+		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dXMSsw04bP03S3bmpVl3cnkB7WYdMI310LqD2FZgtdc=
+			</data>
+		</dict>
+		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tjWzP0yjJPfchnuHeW9nmUcxibozKHOisdOLYU3kyfA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WfRIZuHfkedKRnii0pmF856ay1X/DhDnhc0/LzEQIdg=
+			352AbM9qH28KlbZugoxSx7FNnLwn6Xkso/826VdKU98=
 			</data>
 		</dict>
 	</dict>

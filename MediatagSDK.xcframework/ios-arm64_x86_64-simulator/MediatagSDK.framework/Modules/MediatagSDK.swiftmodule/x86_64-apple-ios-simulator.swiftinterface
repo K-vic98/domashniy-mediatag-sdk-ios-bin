@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.5.2 effective-4.1.50 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name MediatagSDK
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -Onone -module-name MediatagSDK
 import AdSupport
 import AppTrackingTransparency
 import Darwin
@@ -71,20 +71,21 @@ public protocol NSConfigurationType : ObjectiveC.NSObject, MediatagSDK.Configura
   @objc public var encodingCharacterSet: Swift.String
   @objc public var encodingSet: [Swift.String : Swift.String] {
     @objc get
-    @objc set
+    @objc set(value)
   }
   @objc public var dataManager: MediatagSDK.SdkDataManager?
   @objc public var heartbeatInterval: Swift.Double
   public var uidc: Swift.Int?
   @objc public var uIdc: Foundation.NSNumber? {
     @objc get
-    @objc set
+    @objc set(value)
   }
   @objc public init(cid: Swift.String, tms: Swift.String, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   @objc public init(cid: Swift.String, tms: Swift.String)
   @objc public func setPlugin(withBase: Swift.Bool = true, modify: MediatagSDK.RequestMap?)
   @objc deinit
 }
+public typealias Action = (_ success: Swift.Bool, _ url: Swift.String) -> Swift.Void
 @objc public protocol SdkDataManager {
   @objc func getItems(for key: Swift.String) -> [Swift.String]
   @objc func setItems(items: [Swift.String], into key: Swift.String)
@@ -94,7 +95,6 @@ public protocol NSConfigurationType : ObjectiveC.NSObject, MediatagSDK.Configura
   @objc public func setItems(items: [Swift.String], into key: Swift.String)
   @objc deinit
 }
-public typealias Action = (_ success: Swift.Bool, _ url: Foundation.URL) -> Swift.Void
 public protocol RequestConfiguration : AnyObject {
   var baseUrl: Foundation.URL { get }
   var plugins: [MediatagSDK.PluginTypeEnum] { get }
@@ -119,7 +119,7 @@ public protocol ConfigurationType : MediatagSDK.RequestConfiguration {
     @objc get
   }
   @objc public init(configuration: MediatagSDK.NSConfiguration)
-  @objc convenience public init(cid: Swift.String, tms: Swift.String!, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
+  @objc public convenience init(cid: Swift.String, tms: Swift.String!, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   @objc public func setConfiguration(configuration: MediatagSDK.NSConfiguration)
   @objc public func updateConfiguration(uid: Swift.String?, hid: Swift.String?, uidc: Foundation.NSNumber?)
   @objc public func next(contactType: Foundation.NSNumber, view: Foundation.NSNumber?, idc: Foundation.NSNumber?, idlc: Foundation.NSString?, urlc: Foundation.NSString?, media: Swift.String?, ver: Foundation.NSNumber?, fts: Foundation.NSString?)
@@ -179,7 +179,10 @@ public enum ContactType : Swift.Int {
   }
 }
 public enum EventType : Swift.Int {
-  case stop, start, heartBeat, pause
+  case stop
+  case start
+  case heartBeat
+  case pause
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -214,9 +217,9 @@ final public class Mediatag {
   final public var sendingIsAvailable: Swift.Bool {
     get
   }
-  public static let shared: MediatagSDK.Mediatag
+  public static var shared: MediatagSDK.Mediatag
   public init(configuration: MediatagSDK.ConfigurationType, plugins: [MediatagSDK.PluginType] = [])
-  convenience public init(cid: Swift.String, tms: Swift.String!, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
+  public convenience init(cid: Swift.String, tms: Swift.String!, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   final public func setConfiguration(cid: Swift.String, tms: Swift.String!, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   final public func setConfiguration(configuration: MediatagSDK.ConfigurationType)
   final public func updateConfiguration(uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Swift.Int? = nil)
@@ -227,16 +230,7 @@ final public class Mediatag {
 extension MediatagSDK.Mediatag {
   final public var sendingQueue: [Swift.String] {
     get
-    set
+    set(newValue)
   }
   final public func getUserAttributes(original: Swift.Bool = false) -> [Swift.String : Any]
 }
-extension MediatagSDK.ContactType : Swift.Equatable {}
-extension MediatagSDK.ContactType : Swift.Hashable {}
-extension MediatagSDK.ContactType : Swift.RawRepresentable {}
-extension MediatagSDK.EventType : Swift.Equatable {}
-extension MediatagSDK.EventType : Swift.Hashable {}
-extension MediatagSDK.EventType : Swift.RawRepresentable {}
-extension MediatagSDK.QueryKeys : Swift.Equatable {}
-extension MediatagSDK.QueryKeys : Swift.Hashable {}
-extension MediatagSDK.QueryKeys : Swift.RawRepresentable {}

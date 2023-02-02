@@ -85,6 +85,7 @@ public protocol NSConfigurationType : ObjectiveC.NSObject, MediatagSDK.Configura
   @objc public func setPlugin(withBase: Swift.Bool = true, modify: MediatagSDK.RequestMap?)
   @objc deinit
 }
+public typealias Action = (_ success: Swift.Bool, _ url: Swift.String) -> Swift.Void
 @objc public protocol SdkDataManager {
   @objc func getItems(for key: Swift.String) -> [Swift.String]
   @objc func setItems(items: [Swift.String], into key: Swift.String)
@@ -94,7 +95,6 @@ public protocol NSConfigurationType : ObjectiveC.NSObject, MediatagSDK.Configura
   @objc public func setItems(items: [Swift.String], into key: Swift.String)
   @objc deinit
 }
-public typealias Action = (_ success: Swift.Bool, _ url: Foundation.URL) -> Swift.Void
 public protocol RequestConfiguration : AnyObject {
   var baseUrl: Foundation.URL { get }
   var plugins: [MediatagSDK.PluginTypeEnum] { get }

@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Mediatag",
-    platforms: [.macOS(.v12), .iOS(.v12), .tvOS(.v12)],
+    platforms: [.iOS(.v12), .tvOS(.v12)],
     products: [
       .library(
         name: "Mediatag",
@@ -17,7 +17,7 @@ let package = Package(
       .binaryTarget(
           name: "MediatagSDK",
           url: "https://github.com/MEDIASCOPE-JSC/mediatag-sdk-ios-bin/archive/refs/tags/1.1.0.zip",
-          checksum: "0e5867216214fd5c20534e5e92222214d0099fbdd70a80cbe291c7fbd576d128"
+          checksum: "2311bc03eed91dff394de193f0e7cc4eb4072e132129f3203d6b8a3534ab2665"
       )
     ]
 )

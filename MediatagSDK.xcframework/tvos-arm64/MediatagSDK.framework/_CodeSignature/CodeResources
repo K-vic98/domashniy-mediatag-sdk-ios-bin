@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2oBfOO25joCjw05B3L5Go46v/MQ=
+		WbAwzqZULLkfHIyhtEY9/GrJ4M4=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<data>
-		HO093o0mWLjDCS+VqD5Ddchhggs=
+		E0iEsKbuct4WPvhNlIELqeMa7mc=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		HO093o0mWLjDCS+VqD5Ddchhggs=
+		E0iEsKbuct4WPvhNlIELqeMa7mc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -79,7 +79,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rKr21bmkvJFvFNhRbcrGEGn6dCqZvrw3/XDRe/c1h28=
+			Jp/ep3OvJQqk+jJ+ych4e/Ir8oiL8i8cY08XOhd1jdM=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftdoc</key>
@@ -100,7 +100,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rKr21bmkvJFvFNhRbcrGEGn6dCqZvrw3/XDRe/c1h28=
+			Jp/ep3OvJQqk+jJ+ych4e/Ir8oiL8i8cY08XOhd1jdM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

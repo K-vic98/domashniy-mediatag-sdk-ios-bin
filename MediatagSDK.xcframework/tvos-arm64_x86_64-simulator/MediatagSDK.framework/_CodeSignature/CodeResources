@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DrCJkS10jqtmCzN+QsXAKkKVs30=
+		v2NJlwOWzOYcWMY/4zotHDuSxHc=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		RPq4fwgI6Xx8K9t4WSEbXt1Sr4I=
+		TI2FlbrWsVIxn9z8XlF603VoFOw=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		RPq4fwgI6Xx8K9t4WSEbXt1Sr4I=
+		TI2FlbrWsVIxn9z8XlF603VoFOw=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		5FJ6GKu6RNbUtIb0+jDcZ0pEYXQ=
+		BNhsd1KDUT2mcgDGSP+GyiRb63s=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		5FJ6GKu6RNbUtIb0+jDcZ0pEYXQ=
+		BNhsd1KDUT2mcgDGSP+GyiRb63s=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -103,7 +103,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GQfwVT7bRqTmAek7n0ANG8daSOBJ+n2W0/B7rfLgWYg=
+			mHiH7PVodB9/ZI6Bd1G5zFWwYMazyJJ5JGka7cdwpSM=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftdoc</key>
@@ -124,7 +124,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GQfwVT7bRqTmAek7n0ANG8daSOBJ+n2W0/B7rfLgWYg=
+			mHiH7PVodB9/ZI6Bd1G5zFWwYMazyJJ5JGka7cdwpSM=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
@@ -145,7 +145,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			appUJAgjw9kvi16boQ08L8CGghjkT5vYhTsBDga2+zo=
+			i1E3Uc0LGZ52Z7OmdwKhn6m4sy3oz8O6n2lTvn8p8ns=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -166,7 +166,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			appUJAgjw9kvi16boQ08L8CGghjkT5vYhTsBDga2+zo=
+			i1E3Uc0LGZ52Z7OmdwKhn6m4sy3oz8O6n2lTvn8p8ns=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

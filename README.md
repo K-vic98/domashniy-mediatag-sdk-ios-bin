@@ -22,7 +22,7 @@ SDK предназначен для анонимного сбора информ
 
 ```swift
   dependencies: [
-      .package(url: "https://github.com/MEDIASCOPE-JSC/media-tag-sdk-ios", .upToNextMajor(from: "1.1.0"))
+      .package(url: "https://github.com/MEDIASCOPE-JSC/media-tag-sdk-ios", .upToNextMajor(from: "1.2.1"))
   ]
 ```
 

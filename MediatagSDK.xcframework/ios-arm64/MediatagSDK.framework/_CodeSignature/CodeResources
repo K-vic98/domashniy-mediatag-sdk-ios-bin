@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3mCpLLZHqV24sFY0c9v4St+qrMM=
+		H5mWzRTwmKsW6ZqhDsQNEPDkvbk=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		445zS4VE6HPSBxCVVw58lZYwoWI=
+		Vx0DTFFx380qQfIs3wAVQ4TWkD8=
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		445zS4VE6HPSBxCVVw58lZYwoWI=
+		Vx0DTFFx380qQfIs3wAVQ4TWkD8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -79,7 +79,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pR20at5t1BT2tMHgb/HHoo52H36KbgR2lGntT/pQQ/o=
+			EPp7UiwocbW3bNR6P7BX6x+9yhp6+V80DVbA2XfWfKk=
 			</data>
 		</dict>
 		<key>Modules/MediatagSDK.swiftmodule/arm64.swiftdoc</key>
@@ -100,7 +100,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pR20at5t1BT2tMHgb/HHoo52H36KbgR2lGntT/pQQ/o=
+			EPp7UiwocbW3bNR6P7BX6x+9yhp6+V80DVbA2XfWfKk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

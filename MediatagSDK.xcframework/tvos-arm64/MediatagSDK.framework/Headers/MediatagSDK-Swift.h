@@ -239,13 +239,18 @@ SWIFT_CLASS("_TtC11MediatagSDK15NSConfiguration")
 /// Data Manager
 /// Provides / saves  data when SDK was allocated / deallocated
 @property (nonatomic, strong) id <SdkDataManager> _Nullable dataManager;
+/// Sending state:
+/// Interval of sending heartbeat request
 @property (nonatomic) NSTimeInterval heartbeatInterval;
+/// Sending state:
+/// Max number of saved unsent requests
+@property (nonatomic) NSInteger sendingQueueBufferSize;
 /// Client information:
 /// User/device ID
 @property (nonatomic, strong) NSNumber * _Nullable uIdc;
 - (nonnull instancetype)initWithCid:(NSString * _Nonnull)cid tms:(NSString * _Nonnull)tms uid:(NSString * _Nullable)uid hid:(NSString * _Nullable)hid uidc:(NSNumber * _Nullable)uidc OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithCid:(NSString * _Nonnull)cid tms:(NSString * _Nonnull)tms OBJC_DESIGNATED_INITIALIZER;
-- (void)setPluginWithBase:(BOOL)withBase modify:(NSMutableURLRequest * _Nonnull (^ _Nullable)(NSMutableURLRequest * _Nonnull))modify;
+- (void)setPluginWithModify:(NSMutableURLRequest * _Nonnull (^ _Nonnull)(NSMutableURLRequest * _Nonnull))modify;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end

@@ -13,7 +13,7 @@ SDK предназначен для анонимного сбора информ
 ### CocoaPods
 
 ```rb
-  pod 'MediaTagSDK'
+  pod 'MediaTagSDK', '~> 1.2.2'
 ```
 
 ### Swift Package Manager
@@ -22,7 +22,10 @@ SDK предназначен для анонимного сбора информ
 
 ```swift
   dependencies: [
-      .package(url: "https://github.com/MEDIASCOPE-JSC/media-tag-sdk-ios", .upToNextMajor(from: "1.2.1"))
+      .package(
+        url: "https://github.com/MEDIASCOPE-JSC/media-tag-sdk-ios",
+        .upToNextMajor(from: "1.2.2")
+      )
   ]
 ```
 
@@ -35,7 +38,16 @@ SDK предназначен для анонимного сбора информ
 ```swift
   MediatagSDK.shared.configure(cid: "cid", tms: "tms", uid: "uid", hid: "hid", uidc: 1212)
 ```
-> пример расширенной конфигурации SDK можно найти [здесь](./Readme.advanced.md)
+расширенный вариант
+```swift
+  let config = NSConfiguration =  NSConfiguration(cid: "partner_name", tms: "partner_tms".....)
+  config.plugins.append(.customFunction({ request in
+    // check or modify Request
+    return request
+  }))
+  Mediatag.shared.setConfiguration(configuration: config)
+```
+> пример расширенной конфигурации SDK с кастомной реализацией [здесь](./Readme.advanced.md)
 #### Проверка базовых аттрибутов
   ```swift
     var userAttributes:  [[String: Any?]]
@@ -59,4 +71,3 @@ SDK предназначен для анонимного сбора информ
   ```swift
     var sendingQueue: [String?]
   ```
-  

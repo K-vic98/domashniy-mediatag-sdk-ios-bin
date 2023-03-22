@@ -58,7 +58,7 @@ public typealias RequestMap = ((_ request: Foundation.NSMutableURLRequest) -> Fo
 public protocol NSConfigurationType : ObjectiveC.NSObject, MediatagSDK.ConfigurationType {
 }
 @objc public class NSConfiguration : ObjectiveC.NSObject, MediatagSDK.NSConfigurationType {
-  public var plugins: [MediatagSDK.PluginTypeEnum]?
+  public var plugins: [MediatagSDK.PluginTypeEnum]
   @objc public var hid: Swift.String?
   @objc public var uid: Swift.String?
   @objc public var cid: Swift.String {
@@ -75,6 +75,7 @@ public protocol NSConfigurationType : ObjectiveC.NSObject, MediatagSDK.Configura
   }
   @objc public var dataManager: MediatagSDK.SdkDataManager?
   @objc public var heartbeatInterval: Swift.Double
+  @objc public var sendingQueueBufferSize: Swift.Int
   public var uidc: Swift.Int?
   @objc public var uIdc: Foundation.NSNumber? {
     @objc get
@@ -82,7 +83,7 @@ public protocol NSConfigurationType : ObjectiveC.NSObject, MediatagSDK.Configura
   }
   @objc public init(cid: Swift.String, tms: Swift.String, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   @objc public init(cid: Swift.String, tms: Swift.String)
-  @objc public func setPlugin(withBase: Swift.Bool = true, modify: MediatagSDK.RequestMap?)
+  @objc public func setPlugin(modify: @escaping MediatagSDK.RequestMap)
   @objc deinit
 }
 public typealias Action = (_ success: Swift.Bool, _ url: Swift.String) -> Swift.Void

@@ -76,14 +76,10 @@ public protocol NSConfigurationType : ObjectiveC.NSObject, MediatagSDK.Configura
   @objc public var dataManager: MediatagSDK.SdkDataManager?
   @objc public var heartbeatInterval: Swift.Double
   @objc public var sendingQueueBufferSize: Swift.Int
-  public var uidc: Swift.Int?
-  @objc public var uIdc: Foundation.NSNumber? {
-    @objc get
-    @objc set
-  }
+  @objc public var uidc: Foundation.NSNumber?
   @objc public init(cid: Swift.String, tms: Swift.String, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   @objc public init(cid: Swift.String, tms: Swift.String)
-  @objc public func setPlugin(modify: @escaping MediatagSDK.RequestMap)
+  @objc public func setPlugin(modify: MediatagSDK.RequestMap?)
   @objc deinit
 }
 public typealias Action = (_ success: Swift.Bool, _ url: Swift.String) -> Swift.Void
@@ -111,7 +107,7 @@ public protocol RequestConfiguration : AnyObject {
 public protocol ConfigurationType : MediatagSDK.RequestConfiguration {
   var uid: Swift.String? { get set }
   var hid: Swift.String? { get set }
-  var uidc: Swift.Int? { get set }
+  var uidc: Foundation.NSNumber? { get set }
   var cid: Swift.String { get }
   var tms: Swift.String { get }
 }
@@ -220,7 +216,7 @@ final public class Mediatag {
   convenience public init(cid: Swift.String, tms: Swift.String!, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   final public func setConfiguration(cid: Swift.String, tms: Swift.String!, uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   final public func setConfiguration(configuration: MediatagSDK.ConfigurationType)
-  final public func updateConfiguration(uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Swift.Int? = nil)
+  final public func updateConfiguration(uid: Swift.String? = nil, hid: Swift.String? = nil, uidc: Foundation.NSNumber? = nil)
   final public func next(_ event: MediatagSDK.Event)
   final public func stop()
   @objc deinit

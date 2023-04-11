@@ -14,7 +14,7 @@
       
       var idc: Int? = nil
       
-      var uidc: Int?  = 2
+      var uidc: NSNumber?  = 2
 
     }
   ```

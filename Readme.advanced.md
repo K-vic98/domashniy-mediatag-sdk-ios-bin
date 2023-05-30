@@ -8,13 +8,13 @@
 
       var cid: String! = "example_com"
       
+      var tms: String = "partner_tms"
+      
       var hid: String? = "27fa89c8-e7af-435d-b0b7-0dd2b17b3fa7"
       
       var uid: String? = nil
       
-      var idc: Int? = nil
-      
-      var uidc: NSNumber?  = 2
+      var uidc: NSNumber? = 2
 
     }
   ```
@@ -37,13 +37,6 @@
   протоколо PluginType требует имплементацию функции: `func prepare(_ request: URLRequest) -> URLRequest`
     - customPlugin(PluginType) - с использованием имплементации протокола PluginType [пример](/#подготовка-запроса)
     - customFunction((_ request: NSMutableURLRequest) -> NSMutableURLRequest) - через предикат
-
-- `encodingSet`
-  преобразует URLQueryItem[key] используя value
-  ```swift
-    var encode: [String: CharacterSet]
-  ```
-  > при переопределении данного параметра установите .urlHostAllowed для urlc, media
 
 - `sendingQueueBufferSize`
   размер буфера для хранения данный в случае отсутствия соединения с интренетом
@@ -109,7 +102,7 @@
 ```swift
   var encodingSet: [String: CharacterSet] // (URLQueryItem.key : Метод кодирования)
 ```
-
+> при переопределении данного параметра установите .urlHostAllowed для urlc, media
 - `prepareQueryItemValue`
 ```swift
   func prepareQueryItem(encodingSet: inout [String: CharacterSet], key: String, value: String?) -> String?

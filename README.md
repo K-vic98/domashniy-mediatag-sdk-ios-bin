@@ -13,7 +13,7 @@ SDK предназначен для анонимного сбора информ
 ### CocoaPods
 
 ```rb
-  pod 'MediaTagSDK', '~> 1.2.3'
+  pod 'MediaTagSDK', '~> 1.2.4'
 ```
 
 ### Swift Package Manager
@@ -24,7 +24,7 @@ SDK предназначен для анонимного сбора информ
   dependencies: [
       .package(
         url: "https://github.com/MEDIASCOPE-JSC/mediatag-sdk-ios-bin",
-        .upToNextMajor(from: "1.2.3")
+        .upToNextMajor(from: "1.2.4")
       )
   ]
 ```

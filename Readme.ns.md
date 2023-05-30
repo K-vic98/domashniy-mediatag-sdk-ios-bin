@@ -24,7 +24,11 @@
       uidc: @1
     ];
     configuration.baseUrl = [NSURL URLWithString:@"https://some_url.com"];
-    [config setPluginWithModify:^NSMutableURLRequest * _Nonnull(NSMutableURLRequest * request) {
+    [config setPluginWithModify:^NSMutableURLRequest * _Nonnull(NSMutableURLRequest * _Nonnull request) {
+      NSLog(@"%@", request.URL);
+      return request;
+    }];
+    [config setPluginWithModify:^NSMutableURLRequest * _Nonnull(NSMutableURLRequest *request) {
       NSString *requestPath = [[request URL] absoluteString];
       NSLog(@"%@", requestPath);
       return request;

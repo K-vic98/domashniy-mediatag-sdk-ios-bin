@@ -1,0 +1,11 @@
+framework module MediatagSDK {
+  umbrella header "MediatagSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module MediatagSDK.Swift {
+    header "MediatagSDK-Swift.h"
+    requires objc
+}

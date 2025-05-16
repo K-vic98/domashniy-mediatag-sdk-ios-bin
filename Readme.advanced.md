@@ -38,6 +38,13 @@
     - customPlugin(PluginType) - с использованием имплементации протокола PluginType [пример](/#подготовка-запроса)
     - customFunction((_ request: NSMutableURLRequest) -> NSMutableURLRequest) - через предикат
 
+- `encodingSet`
+  преобразует URLQueryItem[key] используя value
+  ```swift
+    var encode: [String: CharacterSet]
+  ```
+  > при переопределении данного параметра установите .urlHostAllowed для urlc, media
+
 - `sendingQueueBufferSize`
   размер буфера для хранения данный в случае отсутствия соединения с интренетом
   ```swift
@@ -53,6 +60,28 @@
     var saveManager: SaveDelegate?
   ```
 
+- `toQuery()` 
+  преобразовать конфигурацию в Dictionary<String, Any?> для [инициализации](./../#Проверка-базовых-аттрибутов) элементов базового url
+  ```swift
+    func toQuery() -> [String: Any?] {}
+  ```
+
+- `mapQuery` 
+    преобразовать `toQuery()` в query: String`:
+  ```swift
+    func mapQuery(query: [String: Any?]) -> String {}
+  ```
+   - [x] для прроверки
+   - [x] фильтрации
+   - [x] добавления кастомных параметров
+   
+- `buildURL(query: String)`
+  сгенерировать исходный URL для отправки
+  ```swift
+    public func buildURL(query: String) -> URL {
+      return baseUrl + query
+    }
+  ```swift
 ### Запуск
 ```swift
   // user variable 
@@ -86,34 +115,11 @@
   func prepareQueryItem(encodingSet: inout [String: CharacterSet], key: String, value: String?) -> String?
 ```
   возвращает новую строку преобразовая `value` согласно `encodingSet[key]`
-  
-- `toQuery()` 
-  преобразовать конфигурацию в Dictionary<String, Any?> для [инициализации](./../#Проверка-базовых-аттрибутов) элементов базового url
-  ```swift
-    func toQuery() -> [String: Any?] {}
-  ```
-  > при переопределении данного параметра передайте в encodingSet urlc и media со значением с `encodingCharacterSet`
 
-- `mapQuery(items: [String: Any?])` 
-    метод преобразования собранных нанных в urlQuery
-  ```swift
-    func mapQuery(query: [String: Any?]) -> String {}
-  ```
-   - [x] для прроверки
-   - [x] фильтрации
-   - [x] установка кодировки для value
-   
-- `prepareQueryItemValue`
-  ```swift
-     public func prepareQueryItemValue(encodingSet: inout [String: String], key: String, value: Any) -> String?
-  ```
-  Вызывается из mapQuery, преобразовывает набор символов с процентной кодировкой, учитывая набор символов (`encodingCharacterSet` по умолчанию)
->  если ключ указан в encodingSet, после преобразования он будет удален (отправлять копию в контексте mapQuery)
-
-- `buildURL(query: String)`
-  сгенерировать исходный URL для отправки
-  ```swift
-    public func buildURL(query: String) -> URL {
-      return baseUrl + query
-    }
-  ```
+- `reducdeExtParams`
+```swift
+   func reducdeExtParams(builder: inout ExtQueryBuilder, next: Dictionary<String, String>.Element, maxCount: Int) 
+```
+  ExtQueryBuilder  валидирует и преобразует `next` в `query`
+  указывает `error` в случае если данные не корректны: их много или они превышают максимальное кол-во символов
+> URL с недопустимыми параметрами будет отклонен! Используйте правильные keyRexeg и keyPrefix!

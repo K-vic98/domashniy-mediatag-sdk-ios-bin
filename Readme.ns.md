@@ -54,3 +54,10 @@
     ver: @36 
   ];
 ```
+### Отправка событий _ext
+params: предпочтительно <String, String>
+```swift
+  [mediatagSDK
+    nextWithParams:@{@1111:@222222, @"nullkey": [NSNull null], @"ContactType": @"11"}
+  ];
+```

@@ -13,7 +13,7 @@ SDK предназначен для анонимного сбора информ
 ### CocoaPods
 
 ```rb
-  pod 'MediaTagSDK', '~> 1.2.4'
+  pod 'MediaTagSDK', '~> 1.2.5'
 ```
 
 ### Swift Package Manager
@@ -23,8 +23,8 @@ SDK предназначен для анонимного сбора информ
 ```swift
   dependencies: [
       .package(
-        url: "https://github.com/MEDIASCOPE-JSC/mediatag-sdk-ios-bin",
-        .upToNextMajor(from: "1.2.4")
+        url: "https://github.com/MEDIASCOPE-JSC/media-tag-sdk-ios",
+        .upToNextMajor(from: "1.2.5")
       )
   ]
 ```
@@ -58,6 +58,10 @@ SDK предназначен для анонимного сбора информ
   let event = Event(contactType: .undefined, view: .start)
     MediatagSDK.shared.next(event)
 ```
+### Отправка событий _ext
+```swift
+      Mediatag.shared.next(.init(params: [String:String]))
+ ```     
 
 - `Статус соединения` 
   если запрос не может быть отправлен или отклонен событие будет добавлено в очередь 
